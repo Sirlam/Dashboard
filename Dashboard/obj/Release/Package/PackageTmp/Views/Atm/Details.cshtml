@@ -1,0 +1,40 @@
+﻿@using Dashboard.Utils
+@model IEnumerable<Dashboard.Models.Entities.AtmPerformanceDetail>
+@{
+    ViewBag.Title = "ATM performanece summary by Class";
+    Layout = "~/Views/Shared/_AtmLayout.cshtml";
+}
+<div class="page-header">
+    <h1>ATM performanece summary by Class</h1>
+</div>
+<table class="table table-condensed table-bordered">
+    <tr>
+        <th>#</th>
+        <th>ATM Class</th>
+        <th>Branch Code</th>
+        <th>Location</th>
+        <th>Terminal</th>
+        <th>In Service (%)</th>
+        <th>Out of Service (%)</th>
+        <th>Report Date</th>
+        <th></th>
+    </tr>
+    @{ var sn = 1;}
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@sn</td>
+            <td>@Html.DisplayFor(modelItem => item.AtmClass)</td>
+            <td>@Html.DisplayFor(modelItem => item.BranchCode)</td>
+            <td>@Html.DisplayFor(modelItem => item.Location)</td>
+            <td>@Html.DisplayFor(modelItem => item.TerminalId)</td>
+            <td>@Html.DisplayFor(modelItem => item.InService)</td>
+            <td class="text-danger">@Html.DisplayFor(modelItem => item.OutOfService)</td>
+            @{ var date = DateTimeUtil.GetDisplayDateFromDateTime(item.ReportDate);}
+            <td>@date</td>
+            <td>@Html.ActionLink("Details", "Details", new { atmclass = item.AtmClass })</td>
+        </tr>
+             sn++;
+    }
+</table>

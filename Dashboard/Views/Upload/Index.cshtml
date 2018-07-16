@@ -1,0 +1,29 @@
+﻿@model IEnumerable<string[]>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@Html.ActionLink("Upload Atm Performance Report","Atm")
+<table class="table table-condensed table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Report Date</th>
+        <th>Date Inserted</th>
+        <th>Username</th>
+        <th>Count</th>
+    </tr>
+    @{ var sn = 1;}
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@sn</td>
+            <td>@Html.DisplayFor(modelItem => item[0])</td>
+            <td>@Html.DisplayFor(modelItem => item[1])</td>
+            <td>@Html.DisplayFor(modelItem => item[2])</td>
+            <td>@Html.DisplayFor(modelItem => item[3])</td>
+        </tr>
+        sn++;
+    }
+</table>

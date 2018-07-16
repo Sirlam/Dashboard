@@ -1,0 +1,145 @@
+﻿@using Dashboard.Utils
+@{
+    ViewBag.Title = "Volume Chart";
+
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2></h2>
+            </hgroup>
+        </div>
+    </section>
+}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                @*@using (Html.BeginForm("Detail", "Volume", FormMethod.Get))
+                    {*@
+
+                <h4 class="col-sm-2">
+                    @{ var today = DateTime.Now.ToString("dd-MMM-yyyy");}
+
+                    Report Date:
+                </h4> <div class="col-sm-4"><input type="date" class="form-control" id="InputDate" value="@today"></div>
+                <div class="col-sm-3">
+                    <button class="btn btn-info" id="detail_date">Search</button>@*<a  id="detail_date" href="/home/detail">Search</a>*@
+                </div>
+
+                @*}*@
+
+                @*@Html.DisplayFor(modelItem => today)*@
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <!--Macalla-->
+        <div class="col-md-12">
+            <h2 class="pull-left">Macalla</h2>
+            <a type="button" class="pull-right btn btn-info" href="@Url.Action("Index","Macalla")">Details</a>
+            <div class="clearfix"></div>
+            <p id="macallaAlert" class="text-primary">Status Ok</p>
+            <canvas id="canvas_macalla_vol" width="800" height="300"></canvas>
+        </div>
+    </div>
+    <!--RIB-->
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="pull-left">RIB</h2>
+            <a type="button" class="pull-right btn btn-info" href="@Url.Action("Index", "Rib")">Details</a>
+            <div class="clearfix"></div>
+            <canvas id="canvas_rib_vol" width="800" height="300"></canvas>
+        </div>
+    </div>
+    <div class="row">
+        <!--NIP Outgoing-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">Nip Outgoing</h2>
+            <a type="button" class="btn btn-info pull-right" href="@Url.Action("Index","NipOutgoing")">Details</a>
+            <div class="clearfix"></div>
+            <canvas id="canvas_nip_out_vol" width="800" height="300"></canvas>
+        </div>
+    </div>
+    <div class="row">
+        <!--NIP Incoming-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">Nip Incoming</h2>
+            <a type="button" class="btn btn-info pull-right" href="@Url.Action("Index","NipIncoming")">Details</a>
+            <div class="clearfix"></div>
+            <canvas id="canvas_nip_in_vol" width="800" height="300"></canvas>
+        </div>
+    </div>
+    <div class="row">
+        <!--NEFT-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">NEFT Outgoing</h2>
+            <a type="button" class="btn btn-info float-right" href="@Url.Action("Index","NeftOutgoing")">Details</a>
+            <div class="clearfix"></div>
+            <canvas id="canvas_neft_vol" width="800" height="300"></canvas>
+        </div>
+    </div>
+    <div class="row">
+        <!--ATM-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">CARDS ON-Atm</h2>
+            <a type="button" class="btn btn-info float-right" href="@Url.Action("Atm","Fep")">Details</a>
+            <div class="clearfix"></div>
+            <canvas id="canvas_atm_vol" width="800" height="300"></canvas>
+        </div>
+    </div>
+    <div class="row">
+        <!--POS-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">CARDS ON-Pos</h2>
+            <a type="button" class="btn btn-info float-right" href="@Url.Action("Pos","Fep")">Details</a>
+            <div class="clearfix"></div>
+            <canvas id="canvas_pos_vol" width="800" height="300"></canvas>
+        </div>
+    </div>
+    <div class="row">
+        <!--Web-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">CARDS ON-Web</h2>
+            <a type="button" class="btn btn-info float-right" href="@Url.Action("Web","Fep")">Details</a>
+            <div class="clearfix"></div>
+            <canvas id="canvas_web_vol" width="800" height="300"></canvas>
+        </div>
+    </div>
+    <div class="row">
+        <!--Naps-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">Naps</h2>
+            <a type="button" class="btn btn-info float-right" href="@Url.Action("Index", "Naps")">Details</a>
+            <div class="clearfix"></div>
+            <canvas id="canvas_naps_vol" width="800" height="300"></canvas>
+        </div>
+    </div>
+    <div class="row">
+        <!--Ebills-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">EBILLS</h2>
+            <a type="button" class="btn btn-info float-right" href="@Url.Action("Index", "Ebills")">Details</a>
+            <div class="clearfix"></div>
+            <canvas id="canvas_ebills_vol" width="800" height="300"></canvas>
+        </div>
+    </div>
+    @section scripts
+    {
+        <script src="~/Scripts/transaction-vol-chart.js" language="javascript" type="text/javascript"></script>
+        <script>
+            $(document).ready(function () {
+                $('#detail_date').click(function () {
+                    location.reload();
+                });
+            });
+        </script>
+    }
+</div>

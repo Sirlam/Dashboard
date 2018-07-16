@@ -1,0 +1,335 @@
+﻿@using Dashboard.Utils
+@{
+    ViewBag.Title = "Mobile";
+
+    List<MobileStateSummary> mobileXpressAccountSummaries = ViewBag.XpressAccount;
+    List<MobileStateSummary> mobileTopUpSummaries = ViewBag.TopUp;
+    List<MobileStateSummary> mobileBillPaymentSummaries = ViewBag.BillPayment;
+    List<MobileStateSummary> mobileInterBankTransferSummaries = ViewBag.InterBankTransfer;
+    List<MobileStateSummary> mobileInterAffiliateTransferSummaries = ViewBag.InterAffiliateTransfer;
+    List<MobileStateSummary> mobileMasterPassMvisaSummaries = ViewBag.MasterPassMvisa;
+    List<MobileStateSummary> mobileMerchantP2PSummaries = ViewBag.MerchantP2P;
+    List<MobileStateSummary> mobileAgencyBankingSummaries = ViewBag.AgencyBanking;
+    List<MobileStateSummary> mobileMobileIncomingSummaries = ViewBag.MobileIncoming;
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2></h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<div class="container">
+    <div class="row">
+        <h4>
+            @{ var today = DateTime.Now.ToString("dd-MMM-yyyy");}
+            Date: @Html.DisplayFor(modelItem => today)
+        </h4>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-6">
+            <div>
+                <h3 class="text-primary">Xpress Account Boarding</h3>
+                <table class="table table-striped table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Transaction State</th>
+                            <th>Total Transaction</th>
+                            <th>Total Volume</th>
+                            <th>Description</th>
+                            <th>Channel Type</th>
+                            <th>State Indicator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var summary in mobileXpressAccountSummaries)
+                        {
+                            <tr>
+                                <td class="col-sm-3"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionCount)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionVolume)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionDescription)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.ChannelType)</b></td>
+                                <td class="col-sm-3 text-success"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+        
+        <div class="col-sm-6">
+            <div>
+                <h3 class="text-primary">TopUp</h3>
+                <table class="table table-striped table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Transaction State</th>
+                            <th>Total Transaction</th>
+                            <th>Total Volume</th>
+                            <th>Description</th>
+                            <th>Channel Type</th>
+                            <th>State Indicator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var summary in mobileTopUpSummaries)
+                        {
+                            <tr>
+                                <td class="col-sm-3"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionCount)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionVolume)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionDescription)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.ChannelType)</b></td>
+                                <td class="col-sm-3 text-success"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-6">
+            <div>
+                <h3 class="text-primary">Bill Payment</h3>
+                <table class="table table-striped table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Transaction State</th>
+                            <th>Total Transaction</th>
+                            <th>Total Volume</th>
+                            <th>Description</th>
+                            <th>Channel Type</th>
+                            <th>State Indicator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var summary in mobileBillPaymentSummaries)
+                        {
+                            <tr>
+                                <td class="col-sm-3"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionCount)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionVolume)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionDescription)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.ChannelType)</b></td>
+                                <td class="col-sm-3 text-success"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+        
+        <div class="col-sm-6">
+            <div>
+                <h3 class="text-primary">Inter-Bank Transfers</h3>
+                <table class="table table-striped table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Transaction State</th>
+                            <th>Total Transaction</th>
+                            <th>Total Volume</th>
+                            <th>Description</th>
+                            <th>Channel Type</th>
+                            <th>State Indicator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var summary in mobileInterBankTransferSummaries)
+                        {
+                            <tr>
+                                <td class="col-sm-3"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionCount)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionVolume)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionDescription)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.ChannelType)</b></td>
+                                <td class="col-sm-3 text-success"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-6">
+            <div>
+                <h3 class="text-primary">Inter-Affiliate Transfers</h3>
+                <table class="table table-striped table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Transaction State</th>
+                            <th>Total Transaction</th>
+                            <th>Total Volume</th>
+                            <th>Description</th>
+                            <th>Channel Type</th>
+                            <th>State Indicator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var summary in mobileInterAffiliateTransferSummaries)
+                        {
+                            <tr>
+                                <td class="col-sm-3"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionCount)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionVolume)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionDescription)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.ChannelType)</b></td>
+                                <td class="col-sm-3 text-success"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+        
+        <div class="col-sm-6">
+            <div>
+                <h3 class="text-primary">MasterPass-Mvisa</h3>
+                <table class="table table-striped table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Transaction State</th>
+                            <th>Total Transaction</th>
+                            <th>Total Volume</th>
+                            <th>Description</th>
+                            <th>Channel Type</th>
+                            <th>State Indicator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var summary in mobileMasterPassMvisaSummaries)
+                        {
+                            <tr>
+                                <td class="col-sm-3"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionCount)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionVolume)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionDescription)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.ChannelType)</b></td>
+                                <td class="col-sm-3 text-success"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-6">
+            <div>
+                <h3 class="text-primary">Merchant-P2P</h3>
+                <table class="table table-striped table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Transaction State</th>
+                            <th>Total Transaction</th>
+                            <th>Total Volume</th>
+                            <th>Description</th>
+                            <th>Channel Type</th>
+                            <th>State Indicator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var summary in mobileMerchantP2PSummaries)
+                        {
+                            <tr>
+                                <td class="col-sm-3"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionCount)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionVolume)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionDescription)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.ChannelType)</b></td>
+                                <td class="col-sm-3 text-success"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+        
+        <div class="col-sm-6">
+            <div>
+                <h3 class="text-primary">Agency Banking</h3>
+                <table class="table table-striped table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Transaction State</th>
+                            <th>Total Transaction</th>
+                            <th>Total Volume</th>
+                            <th>Description</th>
+                            <th>Channel Type</th>
+                            <th>State Indicator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var summary in mobileAgencyBankingSummaries)
+                        {
+                            <tr>
+                                <td class="col-sm-3"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionCount)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionVolume)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionDescription)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.ChannelType)</b></td>
+                                <td class="col-sm-3 text-success"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-6">
+            <div>
+                <h3 class="text-primary">Incoming-To-Xpress_Account</h3>
+                <table class="table table-striped table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Transaction State</th>
+                            <th>Total Transaction</th>
+                            <th>Total Volume</th>
+                            <th>Description</th>
+                            <th>Channel Type</th>
+                            <th>State Indicator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var summary in mobileMobileIncomingSummaries)
+                        {
+                            <tr>
+                                <td class="col-sm-3"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionCount)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionVolume)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionDescription)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.ChannelType)</b></td>
+                                <td class="col-sm-3 text-success"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

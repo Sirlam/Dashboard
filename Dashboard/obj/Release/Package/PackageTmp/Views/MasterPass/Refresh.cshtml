@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+    string lastRefresh = ViewBag.LastRefresh;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Refresh</title>
+</head>
+<body>
+    <div>
+        <h4>@Html.DisplayFor(modelItem => lastRefresh)</h4>
+    </div>
+
+    <script type="text/javascript">
+        function refresh() {
+            setTimeout(function () {
+                location.reload();
+            }, 3600000);
+        }
+        refresh();
+    </script>
+</body>
+</html>

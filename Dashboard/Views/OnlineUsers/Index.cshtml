@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Dashboard.Models.onlineuser>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Users</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", "OnlineUsers",new { @class = "red" })
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.created_by)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.creation_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.verified_by)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.verification_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.udisabled)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.created_by)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.creation_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.verified_by)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.verification_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.udisabled)
+        </td>
+        <td>
+            @Html.ActionLink("Verify", "Edit", new { id = item.id }, new { @class = "red" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "red" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "red" })
+        </td>
+    </tr>
+}
+
+</table>
+
+
+@section scripts{
+    <script>
+        $(window).load(function requestPass(){
+            var password = prompt("Please enter code");
+
+            if (password != "user123") {
+                alert("Wrong Password!");
+                requestPass();
+            }
+        });
+    </script>
+}

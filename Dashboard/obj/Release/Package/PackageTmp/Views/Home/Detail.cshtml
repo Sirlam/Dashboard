@@ -1,0 +1,189 @@
+﻿@using Dashboard.Utils
+@{
+    ViewBag.Title = "Count chart";
+
+
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2></h2>
+            </hgroup>
+        </div>
+    </section>
+}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                @using (Html.BeginForm("Detail", "Home", FormMethod.Get))
+                {
+
+                    <h4 class="col-sm-2">
+                        @{ var today = DateTime.Now.ToString("dd-MMM-yyyy");}
+
+                        Report Date:
+                    </h4> <div class="col-sm-4"><input type="text" class="form-control" id="InputDate" name="InputDate" value="@ViewBag.DetailDate"></div>
+                    <div class="col-sm-3">
+                        <input type="submit" class="btn btn-info" id="detail_date" value="Search" /> @*Search</input><a  id="detail_date" href="/home/detail">Search</a>*@
+                    </div>
+
+                }
+
+                @*@Html.DisplayFor(modelItem => today)*@
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    
+    <div class="row well well-lg">
+        Mobile
+        <div class="col-md-12">
+            <h2 class="pull-left">Mobile</h2>
+            <a type="button" class="pull-right btn btn-info" href="@Url.Action("Index","Mobile")">Details</a>
+            <div class="clearfix"></div>
+            <canvas id="canvas_mobile" width="800" height="300"></canvas>
+
+            <div class="clearfix"></div>
+            <canvas id="canvas_topup" width="800" height="300"></canvas>
+            <hr />
+            
+            <div class="clearfix"></div>
+            <canvas id="canvas_interbank" width="800" height="300"></canvas>
+            <hr />
+            
+            <div class="clearfix"></div>
+            <canvas id="canvas_xpress_boarding" width="800" height="300"></canvas>
+            <hr />
+        </div>
+    </div>
+    <!--RIB-->
+    <div class="row well well-lg">
+        <div class="col-md-12">
+            <h2 class="pull-left">RIB</h2>
+            <a type="button" class="pull-right btn btn-info" href="@Url.Action("Index", "Rib")">Details</a>
+            <div class="clearfix"></div>
+            <canvas id="canvas_rib" width="800" height="300"></canvas>
+            <hr />
+        </div>
+    </div>
+    <div class="row well well-lg">
+        <!--NIP Incoming-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">Nip Incoming</h2>
+            <a type="button" class="btn btn-info pull-right" href="@Url.Action("Index","NipIncoming")">Details</a>
+            <div class="clearfix"></div>
+            <canvas id="canvas_nip_in" width="800" height="300"></canvas>
+            <hr />
+        </div>
+    </div>
+    <div class="row well well-lg">
+        <!--ATM-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">CARDS ON-Atm</h2>
+            <a type="button" class="btn btn-info float-right" href="@Url.Action("Atm","Fep")">Details</a>
+            <div class="clearfix"></div>
+            <canvas id="canvas_atm" width="800" height="300"></canvas>
+            <hr />
+        </div>
+    </div>
+    <div class="row well well-lg">
+        <!--POS-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">CARDS ON-Pos</h2>
+            <a type="button" class="btn btn-info float-right" href="@Url.Action("Pos","Fep")">Details</a>
+            <div class="clearfix"></div>
+            <canvas id="canvas_pos" width="800" height="300"></canvas>
+            <hr />
+        </div>
+    </div>
+    <div class="row well well-lg">
+        <!--Web-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">CARDS ON-Web</h2>
+            <a type="button" class="btn btn-info float-right" href="@Url.Action("Web","Fep")">Details</a>
+            <div class="clearfix"></div>
+            <canvas id="canvas_web" width="800" height="300"></canvas>
+            <hr />
+        </div>
+    </div>
+    <div class="row well well-lg">
+        <!--Naps-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">Naps</h2>
+            <a type="button" class="btn btn-info float-right" href="@Url.Action("Index", "Naps")">Details</a>
+            <div class="clearfix"></div>
+            <canvas id="canvas_naps" width="800" height="300"></canvas>
+            <hr />
+        </div>
+    </div>
+    <div class="row well well-lg">
+        <!--Ebills-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">EBILLS</h2>
+            <a type="button" class="btn btn-info float-right" href="@Url.Action("Index", "Ebills")">Details</a>
+            <div class="clearfix"></div>
+            <canvas id="canvas_ebills" width="800" height="300"></canvas>
+            <hr />
+        </div>
+    </div>
+    <div class="row well well-lg">
+        <!--NEFT-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">NEFT Outgoing</h2>
+            <a type="button" class="btn btn-info float-right" href="@Url.Action("Index","NeftOutgoing")">Details</a>
+            <div class="clearfix"></div>
+            <canvas id="canvas_neft" width="800" height="300"></canvas>
+            <hr />
+        </div>
+    </div>
+    <div class="row well well-lg">
+        <!--NIP Outgoing-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">Nip Outgoing</h2>
+            <a type="button" class="btn btn-info pull-right" href="@Url.Action("Index","NipOutgoing")">Details</a>
+            <div class="clearfix"></div>
+            <canvas id="canvas_nip_out" width="800" height="300"></canvas>
+            <hr />
+        </div>
+    </div>
+    <div class="row well well-lg">
+        <!--NameEnquiry-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">NameEnquiry</h2>
+            @*            <a type="button" class="btn btn-info float-right" href="@Url.Action("Index", "FlexBranch")">Details</a>*@
+            <div class="clearfix"></div>
+            <canvas id="canvas_name_enquiry" width="800" height="300"></canvas>
+            <hr />
+        </div>
+    </div>
+    <div class="row well well-lg">
+        <!--FlexBranch-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">FlexBranch</h2>
+            <a type="button" class="btn btn-info float-right" href="@Url.Action("Index", "FlexBranch")">Details</a>
+            <div class="clearfix"></div>
+            <canvas id="canvas_flexbranch" width="800" height="300"></canvas>
+            <hr />
+        </div>
+    </div>
+
+    @section scripts
+    {
+        <script src="~/Scripts/transaction-detail-chart.js" language="javascript" type="text/javascript"></script>
+        <script>
+            function refresh() {
+                setTimeout(function () {
+                    location.reload();
+                }, 120000);
+            }
+            refresh();
+        </script>
+    }
+</div>

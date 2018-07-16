@@ -1,0 +1,204 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+
+namespace Dashboard.Utils
+{
+    public class XcashOnAtmUtil
+    {
+        private readonly string _fepCs;
+        private readonly string _sqlCs;
+
+        public XcashOnAtmUtil()
+        {
+            _fepCs = ConfigurationManager.ConnectionStrings["FepCS"].ConnectionString;
+            _sqlCs = ConfigurationManager.ConnectionStrings["StageCS"].ConnectionString;
+        }
+
+        public List<XcashOnAtmStateSummary> GetXcashOnAtmTodayStateSummary()
+        {
+            List<XcashOnAtmStateSummary> xcashOnAtmStateSummaries = new List<XcashOnAtmStateSummary>();
+            DateTime lastSpooled = GetLastFetchDateTime();
+            string sqlSelect =
+                "select rsp_code,description,case when rsp_code='00' then 'Successful' else 'Failed' end state_ind, sum(tran_count) tran_count,sum(tot_vol) tot_vol,convert(varchar,spooled_time,120) transdate " +
+                "from xcash_atm,fep_response_code " +
+                "where rsp_code=code " +
+                "and convert(varchar,spooled_time,120)= convert(varchar,cast('" + lastSpooled + "' as datetime),120)  " +
+                "group by rsp_code,description,convert(varchar,spooled_time,120) order by state_ind desc";
+
+            using (SqlConnection con = new SqlConnection(_sqlCs))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand(sqlSelect, con);
+                    con.Open();
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        var transactionSummary = new XcashOnAtmStateSummary();
+
+                        transactionSummary.TransactionStateCode = rdr["rsp_code"].ToString();
+                        transactionSummary.TransactionStateDesc = rdr["description"].ToString();
+                        transactionSummary.TotalTransaction = Convert.ToInt32(rdr["tran_count"].ToString());
+                        if (!rdr["tot_vol"].GetType().Name.Equals("DBNull"))
+                        {
+                            transactionSummary.TotalTransactionVolume = Convert.ToDecimal(rdr["tot_vol"].ToString());
+                        }
+                        else
+                        {
+                            transactionSummary.TotalTransactionVolume = 0;
+                        }
+
+                        transactionSummary.TransactionStateInd = rdr["state_ind"].ToString();
+
+                        DateTime datetime = DateTime.Parse(rdr["transdate"].ToString());
+
+
+                        transactionSummary.TransactionDateTime = datetime;
+
+                        xcashOnAtmStateSummaries.Add(transactionSummary);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
+            return xcashOnAtmStateSummaries;
+        }
+        private DateTime GetLastFetchDateTime()
+        {
+            const string sqlSelect = "SELECT TOP 1 spooled_time FROM xcash_atm ORDER BY ID DESC ";
+            DateTime lastTime = DateTime.Now.Date;
+            using (var con = new SqlConnection(_sqlCs))
+            {
+                try
+                {
+                    var cmd = new SqlCommand(sqlSelect, con);
+                    con.Open();
+                    var date = cmd.ExecuteScalar().ToString();
+                    lastTime = DateTime.Parse(date);
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
+                finally
+                {
+
+                    con.Close();
+                }
+            }
+            return lastTime;
+        }
+        public IEnumerable<XcashOnAtmDetail> GetXcashOnAtmDetails()
+        {
+            string sqlSelect =
+                "SELECT b.rsp_code_rsp as rsp_code, count (distinct b.retrieval_reference_nr) as tran_count,sum(settle_amount_rsp)/100 tot_vol " +
+                "FROM dbo.post_tran_cust a INNER JOIN " +
+                "dbo.post_tran b  ON a.post_tran_cust_id = b.post_tran_cust_id " +
+                "WHERE b.tran_completed = 1 " +
+                "and b.tran_type ='01' " +
+                "and b.sink_node_name ='XCASHsnk' " +
+                "and message_type not in ('0420','0421','0220') " +
+                "AND ( convert(varchar, b.datetime_tran_local, 112) = convert(varchar, getdate(), 112)) " +
+                "and b.rsp_code_rsp in ('00','01','02','05','06','12','14','23','25','30','39','40','41','43','48','51','52','53','54','55','56','57','58','59','61','62','63','65','68','75','91','92','96','98') " +
+                "group by b.rsp_code_rsp";
+
+            List<XcashOnAtmDetail> xcashOnAtmDetails = new List<XcashOnAtmDetail>();
+
+            using (SqlConnection con = new SqlConnection(_fepCs))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand(sqlSelect, con);
+                    con.Open();
+                    cmd.CommandTimeout = 0;
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        XcashOnAtmDetail xcashOnAtmDetail = new XcashOnAtmDetail();
+                        xcashOnAtmDetail.TransactionCount = Convert.ToInt32(rdr["tran_count"].ToString());
+                        xcashOnAtmDetail.TransactionVolume = Convert.ToDecimal(rdr["tot_vol"].ToString());
+                        object j = rdr["rsp_code"].GetType().Name;
+                        if (!rdr["rsp_code"].GetType().Name.Equals("DBNull"))
+                            xcashOnAtmDetail.TransactionResponseCode = rdr["rsp_code"].ToString();
+                        else
+                        {
+                            xcashOnAtmDetail.TransactionResponseCode = null;
+                        }
+                        xcashOnAtmDetail.SpooledTime = DateTime.Now;
+                        xcashOnAtmDetails.Add(xcashOnAtmDetail);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
+                finally
+                {
+
+                    con.Close();
+                }
+
+            }
+            return xcashOnAtmDetails;
+        }
+        public int StageXcashOnAtmData()
+        {
+            IEnumerable<XcashOnAtmDetail> xcashOnAtmDetails = GetXcashOnAtmDetails();
+
+            using (SqlConnection con = new SqlConnection(_sqlCs))
+            {
+                int rowAffected = 0;
+
+                try
+                {
+                    con.Open();
+                    foreach (var xcashOnAtmDetail in xcashOnAtmDetails)
+                    {
+                        const string insQuery =
+                            "BEGIN Insert Into xcash_atm (tran_count,rsp_code,spooled_time,tot_vol)" +
+                            "  values (@tran_count,@rsp_code,@spooledtime,@tot_vol); END;";
+                        SqlCommand cmd = new SqlCommand(insQuery, con);
+
+                        if (xcashOnAtmDetail.TransactionResponseCode != null)
+                        {
+                            cmd.Parameters.AddWithValue("@rsp_code", xcashOnAtmDetail.TransactionResponseCode);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@rsp_code", DBNull.Value);
+                        }
+                        //cmd.Parameters.AddWithValue("@transcode", SqlDbType.NVarChar).Value = nipIncomingDetail.TransactionCompleteCode;
+                        cmd.Parameters.AddWithValue("@tran_count", SqlDbType.Int).Value = xcashOnAtmDetail.TransactionCount;
+                        cmd.Parameters.AddWithValue("@tot_vol", SqlDbType.Decimal).Value = xcashOnAtmDetail.TransactionVolume;
+                        cmd.Parameters.AddWithValue("@spooledtime", SqlDbType.DateTime).Value = xcashOnAtmDetail.SpooledTime;
+
+                        rowAffected += cmd.ExecuteNonQuery();
+                    }
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
+                finally
+                {
+                    con.Close();
+                }
+
+                return rowAffected;
+            }
+        }
+    }
+}

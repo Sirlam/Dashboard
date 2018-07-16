@@ -1,0 +1,113 @@
+﻿@using Dashboard.Utils
+@{
+    ViewBag.Title = "Collections";
+    List<CollectionsSummaryUtil.CollectionsSummary> Summaries = ViewBag.Summary;
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2></h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <h4>
+                @{ var today = DateTime.Now.ToString("dd-MMM-yyyy");}
+                Report Date: @Html.DisplayFor(modelItem => today)
+            </h4>
+        </div>
+        <div class="col-sm-9">
+            <button type="button" class="btn btn-info">GENERATE</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8">
+            <h3>All Transactions</h3>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="fg-scrollabletable">
+                <table class="table table-hover table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Application</th>
+                            <th>Total Transaction</th>
+                            <th>Successful</th>
+                            <th>Pending</th>
+                            <th>Reversal</th>
+                            <th>Incomplete</th>
+                            <th>System Failure</th>
+                            <th>User Failure</th>
+                            <th>Total Failed</th>
+                            <th>Success(%)</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var summary in Summaries)
+                        {
+                            <tr>
+                                <td class="col-sm-3"><b>@Html.DisplayFor(modelItem => summary.Product)</b></td>
+                                <td class="col-sm-2 text-right"><b>@Html.DisplayFor(modelItem => summary.TransactionCount)</b></td>
+                                <td class="col-sm-2 text-success text-right"><b>@Html.DisplayFor(modelItem => summary.SuccessStatus)</b></td>
+                                <td class="col-sm-2 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.PendingStatus)</b></td>
+                                <td class="col-sm-2 text-reversal text-right"><b>@Html.DisplayFor(modelItem => summary.ReversedStatus)</b></td>
+                                <td class="col-sm-2 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.IncompleteStatus)</b></td>
+                                <td class="col-sm-2 text-danger text-right"><b>@Html.DisplayFor(modelItem => summary.SystemFailureStatus)</b></td>
+                                @{
+                            var userFailure = summary.FailureStatus - summary.SystemFailureStatus;
+                                }
+                                <td class="col-sm-2 text-warning text-right"><b>@Html.DisplayFor(modelItem => userFailure)</b></td>
+                                <td class="col-sm-2 text-failure text-right"><b>@Html.DisplayFor(modelItem => summary.FailureStatus)</b></td>
+                                @{
+                            var percent = "0.00";
+                            if ((summary.SuccessStatus + summary.SystemFailureStatus) > 0)
+                            {
+                                percent = ((summary.SuccessStatus / (float)(summary.SuccessStatus + summary.SystemFailureStatus))
+                                           * 100).ToString("0.00");
+                            }
+
+                            CollectionsSummaryUtil.ThresholdState thresholdState = CollectionsSummaryUtil.GetThresholdState(Convert.ToSingle(percent));
+                            var className = "";
+                            if (thresholdState == CollectionsSummaryUtil.ThresholdState.Good)
+                            {
+                                className = "text-success";
+                            }
+                            else if (thresholdState == CollectionsSummaryUtil.ThresholdState.Fair)
+                            {
+                                className = "text-warning";
+                            }
+                            else
+                            {
+                                className = "text-danger";
+                            }
+                                }
+                                <td class="col-sm-2 @className text-right"><b>@Html.DisplayFor(modelItem => percent)</b></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        function refresh() {
+            setTimeout(function () {
+                location.reload();
+            }, 120000);
+        }
+        refresh();
+    </script>
+}

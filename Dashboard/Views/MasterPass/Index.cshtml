@@ -1,0 +1,90 @@
+﻿@using Dashboard.Utils
+@{
+    ViewBag.Title = "MasterPass";
+    List<MerchantSummary> merchantCount = ViewBag.MerchantCountSummary;
+    List<SalesSummary> salesCount = ViewBag.SalesSummary;
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2></h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<div class="container">
+    <h4>Merchant Onboarding</h4>
+    <table class="table table-bordered table-striped table-responsive">
+        <tr>
+            <th>Date</th>
+            <th>Merchant Count</th>
+            <th>Consumer Banking(CS)</th>
+            <th>Commercial Banking(CM)</th>
+            <th>Consumer Banking(DB)</th>
+            <th>Others</th>
+        </tr>
+        <tbody>
+                @foreach (var merchant in merchantCount) { 
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => merchant.DateApproved)</td>
+                        <td>@Html.DisplayFor(modelItem => merchant.MerchantCount)</td>
+                        <td>@Html.DisplayFor(modelItem => merchant.Cs)</td>
+                        <td>@Html.DisplayFor(modelItem => merchant.Cm)</td>
+                        <td>@Html.DisplayFor(modelItem => merchant.Db)</td>
+                        <td>@Html.DisplayFor(modelItem => merchant.Unknown)</td>
+                    </tr>
+                }
+        </tbody>
+    </table>
+    <canvas id="merchant_onboarding" width="800" height="300"></canvas>
+
+    
+    <h4>Weekly Sales Metrics</h4> <a href="@Url.Action("Details","MasterPass")" class="btn btn-info">Details</a>
+    <table class="table table-bordered table-striped table-responsive">
+        <tr>
+            <th>Date</th>
+            <th>Success (count)</th>
+            <th>Failed (count)</th>
+            <th>Total Transactions</th>
+            <th>Success (volume)</th>
+            <th>Failed (volume)</th>
+            
+        </tr>
+        <tbody>
+            <tr>
+                @foreach (var sales in salesCount)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => sales.SalesDate)</td>
+                        <td class="text-success">@Html.DisplayFor(modelItem => sales.SuccessCount)</td>
+                        <td class="text-danger">@Html.DisplayFor(modelItem => sales.FailedCount)</td>
+                        <td>@Html.DisplayFor(modelItem => sales.TotalTransaction)</td>
+                        <td class="text-success">@Html.DisplayFor(modelItem => sales.SuccessVolume)</td>
+                        <td class="text-danger">@Html.DisplayFor(modelItem => sales.FailedVolume)</td>
+                    </tr>
+                }
+            </tr>
+        </tbody>
+    </table>
+    <canvas id="weekly_sales_metrics" width="800" height="300"></canvas>
+</div>
+
+@section scripts
+    {
+    <script src="~/Scripts/masterpass-chart.js" language="javascript" type="text/javascript"></script>
+    
+<script>
+    function refresh() {
+        setTimeout(function () {
+            location.reload();
+        }, 120000);
+    }
+    refresh();
+</script>
+
+}
+

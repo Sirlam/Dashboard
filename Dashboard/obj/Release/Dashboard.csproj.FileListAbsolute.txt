@@ -1,0 +1,384 @@
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\Dashboard.dll.config
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\Dashboard.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\Dashboard.pdb
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\Antlr3.Runtime.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\EntityFramework.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\Microsoft.Data.Edm.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\Microsoft.Data.OData.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\Microsoft.Web.Infrastructure.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\Newtonsoft.Json.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Spatial.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.Helpers.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.Http.OData.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.Mvc.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.Optimization.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.Razor.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.WebPages.Deployment.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.WebPages.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.WebPages.Razor.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\WebGrease.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\EntityFramework.xml
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\Newtonsoft.Json.xml
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.Helpers.xml
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.Mvc.xml
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.Razor.xml
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.WebPages.xml
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.WebPages.Deployment.xml
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.WebPages.Razor.xml
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.Http.OData.xml
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\Microsoft.Data.Edm.xml
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\Microsoft.Data.OData.xml
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Spatial.xml
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\de\Microsoft.Data.Edm.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\es\Microsoft.Data.Edm.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\fr\Microsoft.Data.Edm.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\it\Microsoft.Data.Edm.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\ja\Microsoft.Data.Edm.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\ko\Microsoft.Data.Edm.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\ru\Microsoft.Data.Edm.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\de\Microsoft.Data.OData.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\es\Microsoft.Data.OData.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\fr\Microsoft.Data.OData.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\it\Microsoft.Data.OData.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\ja\Microsoft.Data.OData.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\ko\Microsoft.Data.OData.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\ru\Microsoft.Data.OData.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\de\System.Spatial.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\es\System.Spatial.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\fr\System.Spatial.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\it\System.Spatial.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\ja\System.Spatial.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\ko\System.Spatial.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\ru\System.Spatial.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\zh-Hans\System.Spatial.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\zh-Hant\System.Spatial.resources.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\obj\Release\Dashboard.csprojResolveAssemblyReference.cache
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\obj\Release\Dashboard.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\obj\Release\Dashboard.pdb
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.Abstractions.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.Extensions.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.Http.WebHost.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.Routing.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.Http.WebHost.xml
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.Http.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.Http.xml
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\Microsoft.CSharp.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.ComponentModel.DataAnnotations.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Configuration.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Data.DataSetExtensions.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Data.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Data.Entity.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.DirectoryServices.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Drawing.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.EnterpriseServices.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Net.Http.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Net.Http.Formatting.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Net.Http.WebRequest.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.ApplicationServices.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.DynamicData.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.Entity.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Web.Services.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Xml.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Xml.Linq.dll
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Net.Http.xml
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Net.Http.Formatting.xml
+d:\my documents\osalam\my documents\visual studio 2013\Projects\Dashboard\Dashboard\bin\System.Net.Http.WebRequest.xml
+Z:\Dashboard\Dashboard\bin\Dashboard.dll.config
+Z:\Dashboard\Dashboard\bin\Dashboard.dll
+Z:\Dashboard\Dashboard\bin\Dashboard.pdb
+Z:\Dashboard\Dashboard\bin\Antlr3.Runtime.dll
+Z:\Dashboard\Dashboard\bin\EntityFramework.dll
+Z:\Dashboard\Dashboard\bin\Microsoft.CSharp.dll
+Z:\Dashboard\Dashboard\bin\Microsoft.Data.Edm.dll
+Z:\Dashboard\Dashboard\bin\Microsoft.Data.OData.dll
+Z:\Dashboard\Dashboard\bin\Microsoft.Web.Infrastructure.dll
+Z:\Dashboard\Dashboard\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+Z:\Dashboard\Dashboard\bin\Newtonsoft.Json.dll
+Z:\Dashboard\Dashboard\bin\System.ComponentModel.DataAnnotations.dll
+Z:\Dashboard\Dashboard\bin\System.Configuration.dll
+Z:\Dashboard\Dashboard\bin\System.Data.DataSetExtensions.dll
+Z:\Dashboard\Dashboard\bin\System.Data.dll
+Z:\Dashboard\Dashboard\bin\System.Data.Entity.dll
+Z:\Dashboard\Dashboard\bin\System.Data.OracleClient.dll
+Z:\Dashboard\Dashboard\bin\System.DirectoryServices.dll
+Z:\Dashboard\Dashboard\bin\System.dll
+Z:\Dashboard\Dashboard\bin\System.Drawing.dll
+Z:\Dashboard\Dashboard\bin\System.EnterpriseServices.dll
+Z:\Dashboard\Dashboard\bin\System.Net.Http.dll
+Z:\Dashboard\Dashboard\bin\System.Net.Http.Formatting.dll
+Z:\Dashboard\Dashboard\bin\System.Net.Http.WebRequest.dll
+Z:\Dashboard\Dashboard\bin\System.Spatial.dll
+Z:\Dashboard\Dashboard\bin\System.Web.Abstractions.dll
+Z:\Dashboard\Dashboard\bin\System.Web.ApplicationServices.dll
+Z:\Dashboard\Dashboard\bin\System.Web.dll
+Z:\Dashboard\Dashboard\bin\System.Web.DynamicData.dll
+Z:\Dashboard\Dashboard\bin\System.Web.Entity.dll
+Z:\Dashboard\Dashboard\bin\System.Web.Extensions.dll
+Z:\Dashboard\Dashboard\bin\System.Web.Helpers.dll
+Z:\Dashboard\Dashboard\bin\System.Web.Http.dll
+Z:\Dashboard\Dashboard\bin\System.Web.Http.OData.dll
+Z:\Dashboard\Dashboard\bin\System.Web.Http.WebHost.dll
+Z:\Dashboard\Dashboard\bin\System.Web.Mvc.dll
+Z:\Dashboard\Dashboard\bin\System.Web.Optimization.dll
+Z:\Dashboard\Dashboard\bin\System.Web.Razor.dll
+Z:\Dashboard\Dashboard\bin\System.Web.Routing.dll
+Z:\Dashboard\Dashboard\bin\System.Web.Services.dll
+Z:\Dashboard\Dashboard\bin\System.Web.WebPages.Deployment.dll
+Z:\Dashboard\Dashboard\bin\System.Web.WebPages.dll
+Z:\Dashboard\Dashboard\bin\System.Web.WebPages.Razor.dll
+Z:\Dashboard\Dashboard\bin\System.Xml.dll
+Z:\Dashboard\Dashboard\bin\System.Xml.Linq.dll
+Z:\Dashboard\Dashboard\bin\WebGrease.dll
+Z:\Dashboard\Dashboard\bin\EntityFramework.xml
+Z:\Dashboard\Dashboard\bin\Newtonsoft.Json.xml
+Z:\Dashboard\Dashboard\bin\System.Net.Http.xml
+Z:\Dashboard\Dashboard\bin\System.Net.Http.Formatting.xml
+Z:\Dashboard\Dashboard\bin\System.Net.Http.WebRequest.xml
+Z:\Dashboard\Dashboard\bin\System.Web.Helpers.xml
+Z:\Dashboard\Dashboard\bin\System.Web.Http.xml
+Z:\Dashboard\Dashboard\bin\System.Web.Http.WebHost.xml
+Z:\Dashboard\Dashboard\bin\System.Web.Mvc.xml
+Z:\Dashboard\Dashboard\bin\System.Web.Razor.xml
+Z:\Dashboard\Dashboard\bin\System.Web.WebPages.xml
+Z:\Dashboard\Dashboard\bin\System.Web.WebPages.Deployment.xml
+Z:\Dashboard\Dashboard\bin\System.Web.WebPages.Razor.xml
+Z:\Dashboard\Dashboard\bin\System.Web.Http.OData.xml
+Z:\Dashboard\Dashboard\bin\Microsoft.Data.Edm.xml
+Z:\Dashboard\Dashboard\bin\Microsoft.Data.OData.xml
+Z:\Dashboard\Dashboard\bin\System.Spatial.xml
+Z:\Dashboard\Dashboard\bin\de\Microsoft.Data.Edm.resources.dll
+Z:\Dashboard\Dashboard\bin\es\Microsoft.Data.Edm.resources.dll
+Z:\Dashboard\Dashboard\bin\fr\Microsoft.Data.Edm.resources.dll
+Z:\Dashboard\Dashboard\bin\it\Microsoft.Data.Edm.resources.dll
+Z:\Dashboard\Dashboard\bin\ja\Microsoft.Data.Edm.resources.dll
+Z:\Dashboard\Dashboard\bin\ko\Microsoft.Data.Edm.resources.dll
+Z:\Dashboard\Dashboard\bin\ru\Microsoft.Data.Edm.resources.dll
+Z:\Dashboard\Dashboard\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+Z:\Dashboard\Dashboard\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+Z:\Dashboard\Dashboard\bin\de\Microsoft.Data.OData.resources.dll
+Z:\Dashboard\Dashboard\bin\es\Microsoft.Data.OData.resources.dll
+Z:\Dashboard\Dashboard\bin\fr\Microsoft.Data.OData.resources.dll
+Z:\Dashboard\Dashboard\bin\it\Microsoft.Data.OData.resources.dll
+Z:\Dashboard\Dashboard\bin\ja\Microsoft.Data.OData.resources.dll
+Z:\Dashboard\Dashboard\bin\ko\Microsoft.Data.OData.resources.dll
+Z:\Dashboard\Dashboard\bin\ru\Microsoft.Data.OData.resources.dll
+Z:\Dashboard\Dashboard\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+Z:\Dashboard\Dashboard\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+Z:\Dashboard\Dashboard\bin\de\System.Spatial.resources.dll
+Z:\Dashboard\Dashboard\bin\es\System.Spatial.resources.dll
+Z:\Dashboard\Dashboard\bin\fr\System.Spatial.resources.dll
+Z:\Dashboard\Dashboard\bin\it\System.Spatial.resources.dll
+Z:\Dashboard\Dashboard\bin\ja\System.Spatial.resources.dll
+Z:\Dashboard\Dashboard\bin\ko\System.Spatial.resources.dll
+Z:\Dashboard\Dashboard\bin\ru\System.Spatial.resources.dll
+Z:\Dashboard\Dashboard\bin\zh-Hans\System.Spatial.resources.dll
+Z:\Dashboard\Dashboard\bin\zh-Hant\System.Spatial.resources.dll
+Z:\Dashboard\Dashboard\obj\Release\Dashboard.csprojResolveAssemblyReference.cache
+Z:\Dashboard\Dashboard\obj\Release\Dashboard.dll
+Z:\Dashboard\Dashboard\obj\Release\Dashboard.pdb
+D:\My Documents\osalam\My Documents\Visual Studio 2013\Projects\Dashboard\Dashboard\bin\NLog.config
+D:\My Documents\osalam\My Documents\Visual Studio 2013\Projects\Dashboard\Dashboard\bin\NLog.dll
+D:\My Documents\osalam\My Documents\Visual Studio 2013\Projects\Dashboard\Dashboard\bin\NLog.xml
+Z:\Dashboard\Dashboard\bin\NLog.config
+Z:\Dashboard\Dashboard\bin\NLog.dll
+Z:\Dashboard\Dashboard\bin\NLog.xml
+X:\Projects\Dashboard\Dashboard\bin\NLog.config
+X:\Projects\Dashboard\Dashboard\bin\Dashboard.dll.config
+X:\Projects\Dashboard\Dashboard\bin\Dashboard.dll
+X:\Projects\Dashboard\Dashboard\bin\Dashboard.pdb
+X:\Projects\Dashboard\Dashboard\bin\Antlr3.Runtime.dll
+X:\Projects\Dashboard\Dashboard\bin\EntityFramework.dll
+X:\Projects\Dashboard\Dashboard\bin\Microsoft.CSharp.dll
+X:\Projects\Dashboard\Dashboard\bin\Microsoft.Data.Edm.dll
+X:\Projects\Dashboard\Dashboard\bin\Microsoft.Data.OData.dll
+X:\Projects\Dashboard\Dashboard\bin\Microsoft.Web.Infrastructure.dll
+X:\Projects\Dashboard\Dashboard\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+X:\Projects\Dashboard\Dashboard\bin\Newtonsoft.Json.dll
+X:\Projects\Dashboard\Dashboard\bin\NLog.dll
+X:\Projects\Dashboard\Dashboard\bin\System.ComponentModel.DataAnnotations.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Configuration.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Data.DataSetExtensions.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Data.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Data.Entity.dll
+X:\Projects\Dashboard\Dashboard\bin\System.DirectoryServices.dll
+X:\Projects\Dashboard\Dashboard\bin\System.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Drawing.dll
+X:\Projects\Dashboard\Dashboard\bin\System.EnterpriseServices.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Net.Http.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Net.Http.Formatting.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Net.Http.WebRequest.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Spatial.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Web.Abstractions.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Web.ApplicationServices.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Web.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Web.DynamicData.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Web.Entity.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Web.Extensions.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Web.Helpers.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Web.Http.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Web.Http.OData.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Web.Http.WebHost.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Web.Mvc.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Web.Optimization.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Web.Razor.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Web.Routing.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Web.Services.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Web.WebPages.Deployment.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Web.WebPages.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Web.WebPages.Razor.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Xml.dll
+X:\Projects\Dashboard\Dashboard\bin\System.Xml.Linq.dll
+X:\Projects\Dashboard\Dashboard\bin\WebGrease.dll
+X:\Projects\Dashboard\Dashboard\bin\NLog.xml
+X:\Projects\Dashboard\Dashboard\bin\EntityFramework.xml
+X:\Projects\Dashboard\Dashboard\bin\Newtonsoft.Json.xml
+X:\Projects\Dashboard\Dashboard\bin\System.Net.Http.xml
+X:\Projects\Dashboard\Dashboard\bin\System.Net.Http.Formatting.xml
+X:\Projects\Dashboard\Dashboard\bin\System.Net.Http.WebRequest.xml
+X:\Projects\Dashboard\Dashboard\bin\System.Web.Helpers.xml
+X:\Projects\Dashboard\Dashboard\bin\System.Web.Http.xml
+X:\Projects\Dashboard\Dashboard\bin\System.Web.Http.WebHost.xml
+X:\Projects\Dashboard\Dashboard\bin\System.Web.Mvc.xml
+X:\Projects\Dashboard\Dashboard\bin\System.Web.Razor.xml
+X:\Projects\Dashboard\Dashboard\bin\System.Web.WebPages.xml
+X:\Projects\Dashboard\Dashboard\bin\System.Web.WebPages.Deployment.xml
+X:\Projects\Dashboard\Dashboard\bin\System.Web.WebPages.Razor.xml
+X:\Projects\Dashboard\Dashboard\bin\System.Web.Http.OData.xml
+X:\Projects\Dashboard\Dashboard\bin\Microsoft.Data.Edm.xml
+X:\Projects\Dashboard\Dashboard\bin\Microsoft.Data.OData.xml
+X:\Projects\Dashboard\Dashboard\bin\System.Spatial.xml
+X:\Projects\Dashboard\Dashboard\bin\de\Microsoft.Data.Edm.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\es\Microsoft.Data.Edm.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\fr\Microsoft.Data.Edm.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\it\Microsoft.Data.Edm.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\ja\Microsoft.Data.Edm.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\ko\Microsoft.Data.Edm.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\ru\Microsoft.Data.Edm.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\de\Microsoft.Data.OData.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\es\Microsoft.Data.OData.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\fr\Microsoft.Data.OData.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\it\Microsoft.Data.OData.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\ja\Microsoft.Data.OData.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\ko\Microsoft.Data.OData.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\ru\Microsoft.Data.OData.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\de\System.Spatial.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\es\System.Spatial.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\fr\System.Spatial.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\it\System.Spatial.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\ja\System.Spatial.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\ko\System.Spatial.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\ru\System.Spatial.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\zh-Hans\System.Spatial.resources.dll
+X:\Projects\Dashboard\Dashboard\bin\zh-Hant\System.Spatial.resources.dll
+X:\Projects\Dashboard\Dashboard\obj\Release\Dashboard.csprojResolveAssemblyReference.cache
+X:\Projects\Dashboard\Dashboard\obj\Release\Dashboard.dll
+X:\Projects\Dashboard\Dashboard\obj\Release\Dashboard.pdb
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\NLog.config
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\Dashboard.dll.config
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\Dashboard.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\Dashboard.pdb
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\Antlr3.Runtime.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\EntityFramework.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\Microsoft.CSharp.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\Microsoft.Data.Edm.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\Microsoft.Data.OData.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\Microsoft.Web.Infrastructure.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\Newtonsoft.Json.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\NLog.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.ComponentModel.DataAnnotations.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Configuration.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Data.DataSetExtensions.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Data.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Data.Entity.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.DirectoryServices.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Drawing.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.EnterpriseServices.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Net.Http.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Net.Http.Formatting.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Net.Http.WebRequest.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Spatial.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.Abstractions.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.ApplicationServices.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.DynamicData.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.Entity.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.Extensions.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.Helpers.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.Http.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.Http.OData.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.Http.WebHost.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.Mvc.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.Optimization.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.Razor.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.Routing.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.Services.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.WebPages.Deployment.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.WebPages.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.WebPages.Razor.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Xml.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Xml.Linq.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\WebGrease.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\NLog.xml
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\EntityFramework.xml
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\Newtonsoft.Json.xml
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Net.Http.xml
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Net.Http.Formatting.xml
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Net.Http.WebRequest.xml
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.Helpers.xml
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.Http.xml
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.Http.WebHost.xml
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.Mvc.xml
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.Razor.xml
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.WebPages.xml
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.WebPages.Deployment.xml
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.WebPages.Razor.xml
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Web.Http.OData.xml
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\Microsoft.Data.Edm.xml
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\Microsoft.Data.OData.xml
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\System.Spatial.xml
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\de\Microsoft.Data.Edm.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\es\Microsoft.Data.Edm.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\fr\Microsoft.Data.Edm.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\it\Microsoft.Data.Edm.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\ja\Microsoft.Data.Edm.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\ko\Microsoft.Data.Edm.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\ru\Microsoft.Data.Edm.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\de\Microsoft.Data.OData.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\es\Microsoft.Data.OData.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\fr\Microsoft.Data.OData.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\it\Microsoft.Data.OData.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\ja\Microsoft.Data.OData.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\ko\Microsoft.Data.OData.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\ru\Microsoft.Data.OData.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\de\System.Spatial.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\es\System.Spatial.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\fr\System.Spatial.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\it\System.Spatial.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\ja\System.Spatial.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\ko\System.Spatial.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\ru\System.Spatial.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\zh-Hans\System.Spatial.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\zh-Hant\System.Spatial.resources.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\obj\Release\Dashboard.csprojResolveAssemblyReference.cache
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\obj\Release\Dashboard.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\obj\Release\Dashboard.pdb
+D:\My Documents\osalam\My Documents\Visual Studio 2013\Projects\Dashboard\Dashboard\bin\Oracle.ManagedDataAccess.dll
+X:\Projects\Dashboard\Dashboard\bin\Oracle.ManagedDataAccess.dll
+\\10.12.100.116\aue\Projects\Dashboard\Dashboard\bin\Oracle.ManagedDataAccess.dll

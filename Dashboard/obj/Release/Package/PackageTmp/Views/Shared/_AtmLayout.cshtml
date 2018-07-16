@@ -1,0 +1,85 @@
+﻿@using System.Web.UI.WebControls
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Ecobank @ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+
+    @Styles.Render("~/Content/bootstrap")
+    @Styles.Render("~/Content/jasnybootstrap")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navmenu navmenu-default navmenu-fixed-left">
+        <a class="navmenu-brand" href="@Url.Action("Index","Home")">Dashboard</a>
+        <ul class="nav navmenu-nav">
+            @{string className = "";}
+            @{
+                className = string.Equals(HttpContext.Current.Request.Url.AbsolutePath.Trim(), Url.Action("Index", "Atm"), StringComparison.OrdinalIgnoreCase) ? "class=active" : "";
+            }
+            <li @className>
+                <a href="@Url.Action("Index", "Atm")">
+                    Summary
+                </a>
+            </li>
+            @{
+                className = string.Equals(HttpContext.Current.Request.Url.AbsolutePath.Trim(), Url.Action("Details", "Atm"), StringComparison.OrdinalIgnoreCase) ? "class=active" : "";
+            }
+            <li @className>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Details<b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu navmenu-nav">
+                    <li><a href="@Url.Action("Details","Atm")">All Details</a></li>
+                    <li><a href="@Url.Action("Details","Atm",new { atmclass = "Gold" })">Gold Details</a></li>
+                    <li><a href="@Url.Action("Details","Atm",new { atmclass = "Silver" })">Silver Details</a></li>
+                    <li><a href="@Url.Action("Details","Atm",new { atmclass = "Bronze" })">Bronze Details</a></li>
+
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="canvas">
+        <div class="navbar navbar-default navbar-fixed-top">
+            <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="container">
+            <div id="body">
+                <section class="content-wrapper main-content clear-fix">
+                    @RenderBody()
+                </section>
+            </div>
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <p>Copyright &copy; @DateTime.Now.Year. Ecobank Nigeria. All rights reserved</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="#">Terms of Service</a>|<a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div><!-- /.container -->
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/bootstrapJS")
+    @Scripts.Render("~/bundles/chartJS")
+    @Scripts.Render("~/bundles/jasnybootstrap")
+    @Scripts.Render("~/bundles/requireJS")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

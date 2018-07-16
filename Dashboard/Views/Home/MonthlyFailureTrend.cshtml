@@ -1,0 +1,103 @@
+﻿@using Dashboard.Utils
+@{
+    ViewBag.Title = "Monthly Failure Trend";
+
+
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2></h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<div class="container">
+    <div class="row">
+        <!--Macalla-->
+        <div class="col-md-12">
+            <h2 class="pull-left">Macalla</h2>
+            <div class="clearfix"></div>
+            <canvas id="canvas_macalla_failed" width="800" height="300"></canvas>
+        </div>
+    </div>
+    <!--RIB-->
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="pull-left">RIB</h2>
+            <div class="clearfix"></div>
+            <canvas id="canvas_rib_failed" width="800" height="300"></canvas>
+        </div>
+    </div>
+    <div class="row">
+        <!--NIP Outgoing-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">Nip Outgoing</h2>
+            <div class="clearfix"></div>
+            <canvas id="canvas_nip_out_failed" width="800" height="300"></canvas>
+        </div>
+    </div>
+    <div class="row">
+        <!--NIP Incoming-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">Nip Incoming</h2>
+            <div class="clearfix"></div>
+            <canvas id="canvas_nip_in_failed" width="800" height="300"></canvas>
+        </div>
+    </div>
+    <div class="row">
+        <!--NEFT-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">NEFT Outgoing</h2>
+            <div class="clearfix"></div>
+            <canvas id="canvas_neft_failed" width="800" height="300"></canvas>
+        </div>
+    </div>
+    <div class="row">
+        <!--ATM-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">CARDS ON-Atm</h2>
+            <div class="clearfix"></div>
+            <canvas id="canvas_atm_failed" width="800" height="300"></canvas>
+        </div>
+    </div>
+    <div class="row">
+        <!--POS-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">CARDS ON-Pos</h2>
+            <div class="clearfix"></div>
+            <canvas id="canvas_pos_failed" width="800" height="300"></canvas>
+        </div>
+    </div>
+    <div class="row">
+        <!--Web-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">CARDS ON-Web</h2>
+            <div class="clearfix"></div>
+            <canvas id="canvas_web_failed" width="800" height="300"></canvas>
+        </div>
+    </div>
+    <div class="row">
+        <!--Naps-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">Naps</h2>
+            <div class="clearfix"></div>
+            <canvas id="canvas_naps_failed" width="800" height="300"></canvas>
+        </div>
+    </div>
+    <div class="row">
+        <!--Ebills-->
+        <div class="col-sm-12">
+            <h2 class="pull-left">EBILLS</h2>
+            <div class="clearfix"></div>
+            <canvas id="canvas_ebills_failed" width="800" height="300"></canvas>
+        </div>
+    </div>
+    @section scripts
+    {
+        <script src="~/Scripts/transaction-failed-chart.js" language="javascript" type="text/javascript"></script>
+    }
+</div>

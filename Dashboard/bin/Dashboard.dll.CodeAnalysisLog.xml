@@ -1,0 +1,1243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 12.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="12.0">
+ <Targets>
+  <Target Name="X:\Projects\Dashboard\Dashboard\bin\Dashboard.dll">
+   <Modules>
+    <Module Name="dashboard.dll">
+     <Namespaces>
+      <Namespace Name="Dashboard.Controllers">
+       <Types>
+        <Type Name="UploadController" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ReadFileToDataset(System.String,System.Web.HttpPostedFileBase)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Controllers" File="UploadController.cs" Line="208">The query string passed to 'OleDbDataAdapter.OleDbDataAdapter(string, OleDbConnection)' in 'UploadController.ReadFileToDataset(string, HttpPostedFileBase)' could contain the following variables 'Enumerable.Where&lt;string&gt;(excelSheets, CS$&lt;&gt;9__CachedAnonymousMethodDelegate1).GetEnumerator().Current', 'excelSheets[0]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SaveReport(System.String,System.String[],System.String[],System.String[],System.String[],System.String[],System.String[],System.String[],System.String[],System.String[],System.String[],System.String[],System.String[])" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Controllers" File="UploadController.cs" Line="124">The query string passed to 'SqlCommand.CommandText.set(string)' in 'UploadController.SaveReport(string, string[], string[], string[], string[], string[], string[], string[], string[], string[], string[], string[], string[])' could contain the following variables 'i'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="Dashboard.Models.DataAccess">
+       <Types>
+        <Type Name="AtmDataSource" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetAtmClassSummaryTrend()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Models\DataAccess" File="AtmDataSource.cs" Line="159">Object 'con' can be disposed more than once in method 'AtmDataSource.GetAtmClassSummaryTrend()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 159</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetAtmClassSummayList()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Models\DataAccess" File="AtmDataSource.cs" Line="61">Object 'con' can be disposed more than once in method 'AtmDataSource.GetAtmClassSummayList()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 61</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetDetail(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Models\DataAccess" File="AtmDataSource.cs" Line="116">Object 'con' can be disposed more than once in method 'AtmDataSource.GetDetail(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 116</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Models\DataAccess" File="AtmDataSource.cs" Line="82">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'AtmDataSource.GetDetail(string)' could contain the following variables 'atmclass'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="NameEnquiryDataSource" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetLastFetchDateTime()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Models\DataAccess" File="NameEnquiryDataSource.cs" Line="46">Object 'con' can be disposed more than once in method 'NameEnquiryDataSource.GetLastFetchDateTime()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 46</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetNameEnquiryDetails()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Models\DataAccess" File="NameEnquiryDataSource.cs" Line="90">Object 'con' can be disposed more than once in method 'NameEnquiryDataSource.GetNameEnquiryDetails()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 90</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodayNameEnquiryTrend(System.DateTime)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Models\DataAccess" File="NameEnquiryDataSource.cs" Line="171">Object 'con' can be disposed more than once in method 'NameEnquiryDataSource.GetTodayNameEnquiryTrend(DateTime)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 171</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StageNameEnquiryData()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Models\DataAccess" File="NameEnquiryDataSource.cs" Line="128">Object 'con' can be disposed more than once in method 'NameEnquiryDataSource.StageNameEnquiryData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 128</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="Dashboard.Utils">
+       <Types>
+        <Type Name="AnalysisUtil" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetMobileAnalysisModels(System.String,System.DateTime,System.DateTime)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="AnalysisUtil.cs" Line="62">Object 'con' can be disposed more than once in method 'AnalysisUtil.GetMobileAnalysisModels(string, DateTime, DateTime)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 62</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetMonthlyAnalysisTrend(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="AnalysisUtil.cs" Line="153">Object 'con' can be disposed more than once in method 'AnalysisUtil.GetMonthlyAnalysisTrend(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 153</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="AnalysisUtil.cs" Line="127">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'AnalysisUtil.GetMonthlyAnalysisTrend(string, string)' could contain the following variables 'selectedApplication'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BasisUtil" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetBasisDetails()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="BasisUtil.cs" Line="102">Object 'con' can be disposed more than once in method 'BasisUtil.GetBasisDetails()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 102</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetBasisTodayStateSummary()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="BasisUtil.cs" Line="155">Object 'con' can be disposed more than once in method 'BasisUtil.GetBasisTodayStateSummary()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 155</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetLastFetchDateTime()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="BasisUtil.cs" Line="183">Object 'con' can be disposed more than once in method 'BasisUtil.GetLastFetchDateTime()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 183</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StageBasisData()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="BasisUtil.cs" Line="226">Object 'con' can be disposed more than once in method 'BasisUtil.StageBasisData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 226</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BulkNapsOutgoingUtil" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetBulkNapsOutgoingDetails()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="BulkNapsOutgoingUtil.cs" Line="208">Object 'con' can be disposed more than once in method 'BulkNapsOutgoingUtil.GetBulkNapsOutgoingDetails()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 208</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetBulkNapsOutgoingTodayPerformance()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="BulkNapsOutgoingUtil.cs" Line="65">Object 'con' can be disposed more than once in method 'BulkNapsOutgoingUtil.GetBulkNapsOutgoingTodayPerformance()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 65</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetBulkNapsOutgoingTodayStateSummary()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="BulkNapsOutgoingUtil.cs" Line="151">Object 'con' can be disposed more than once in method 'BulkNapsOutgoingUtil.GetBulkNapsOutgoingTodayStateSummary()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 151</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetLastFetchDateTime()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="BulkNapsOutgoingUtil.cs" Line="95">Object 'con' can be disposed more than once in method 'BulkNapsOutgoingUtil.GetLastFetchDateTime()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 95</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StageBulkNapsOutgoingData()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="BulkNapsOutgoingUtil.cs" Line="261">Object 'con' can be disposed more than once in method 'BulkNapsOutgoingUtil.StageBulkNapsOutgoingData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 261</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="CollectionsSummaryUtil" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetTodayPerformanceSummary()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="CollectionsSummary.cs" Line="101">Object 'con' can be disposed more than once in method 'CollectionsSummaryUtil.GetTodayPerformanceSummary()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 101</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="EbillsUtil" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetEbiilsTodayPerformance()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="EbillsUtil.cs" Line="65">Object 'con' can be disposed more than once in method 'EbillsUtil.GetEbiilsTodayPerformance()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 65</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetEbillsDetails()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="EbillsUtil.cs" Line="198">Object 'con' can be disposed more than once in method 'EbillsUtil.GetEbillsDetails()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 198</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetEbillsTodayStateSummary()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="EbillsUtil.cs" Line="122">Object 'con' can be disposed more than once in method 'EbillsUtil.GetEbillsTodayStateSummary()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 122</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetLastFetchDateTime()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="EbillsUtil.cs" Line="150">Object 'con' can be disposed more than once in method 'EbillsUtil.GetLastFetchDateTime()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 150</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StageEbillsData()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="EbillsUtil.cs" Line="249">Object 'con' can be disposed more than once in method 'EbillsUtil.StageEbillsData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 249</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="FailureUtil" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetMonthlyRibFailureCummTrend()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="FailureUtil.cs" Line="65">Object 'con' can be disposed more than once in method 'FailureUtil.GetMonthlyRibFailureCummTrend()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 65</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="FepUtil" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetFepDetails()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="FepUtil.cs" Line="219">Object 'con' can be disposed more than once in method 'FepUtil.GetFepDetails()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 219</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetFepTodayPerformance(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="FepUtil.cs" Line="66">Object 'con' can be disposed more than once in method 'FepUtil.GetFepTodayPerformance(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 66</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="FepUtil.cs" Line="34">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'FepUtil.GetFepTodayPerformance(string)' could contain the following variables 'fepType', 'lastSpooled'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetFepTodayStateSummary(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="FepUtil.cs" Line="124">Object 'con' can be disposed more than once in method 'FepUtil.GetFepTodayStateSummary(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 124</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="FepUtil.cs" Line="86">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'FepUtil.GetFepTodayStateSummary(string)' could contain the following variables 'fepType', 'lastSpooled'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetLastFetchDateTime()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="FepUtil.cs" Line="151">Object 'con' can be disposed more than once in method 'FepUtil.GetLastFetchDateTime()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 151</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StageFepData()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="FepUtil.cs" Line="266">Object 'con' can be disposed more than once in method 'FepUtil.StageFepData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 266</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="FlexBranchUtil" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetAtmTransactionsLogs()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="FlexBranchUtil.cs" Line="210">Object 'con' can be disposed more than once in method 'FlexBranchUtil.GetAtmTransactionsLogs()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 210</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetFLexBranchDetails()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="FlexBranchUtil.cs" Line="175">Object 'con' can be disposed more than once in method 'FlexBranchUtil.GetFLexBranchDetails()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 175</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetFlexBranchTodayPerformance()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="FlexBranchUtil.cs" Line="61">Object 'con' can be disposed more than once in method 'FlexBranchUtil.GetFlexBranchTodayPerformance()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 61</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetFlexBranchTodayStateSummary()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="FlexBranchUtil.cs" Line="105">Object 'con' can be disposed more than once in method 'FlexBranchUtil.GetFlexBranchTodayStateSummary()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 105</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetLastFetchDateTime()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="FlexBranchUtil.cs" Line="133">Object 'con' can be disposed more than once in method 'FlexBranchUtil.GetLastFetchDateTime()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 133</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StageAtmTransactionsData()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="FlexBranchUtil.cs" Line="294">Object 'con' can be disposed more than once in method 'FlexBranchUtil.StageAtmTransactionsData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 294</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StageFLexBranchData()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="FlexBranchUtil.cs" Line="254">Object 'con' can be disposed more than once in method 'FlexBranchUtil.StageFLexBranchData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 254</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="MacallaUtil" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetLastFetchDateTime()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MacallaUtil.cs" Line="223">Object 'con' can be disposed more than once in method 'MacallaUtil.GetLastFetchDateTime()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 223</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetMacallaDetail()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MacallaUtil.cs" Line="293">Object 'con' can be disposed more than once in method 'MacallaUtil.GetMacallaDetail()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 293</Issue>
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MacallaUtil.cs" Line="321">Object 'con' can be disposed more than once in method 'MacallaUtil.GetMacallaDetail()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 321</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetMacallaLastPerformance()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MacallaUtil.cs" Line="102">Object 'con' can be disposed more than once in method 'MacallaUtil.GetMacallaLastPerformance()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 102</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MacallaUtil.cs" Line="75">The query string passed to 'OracleCommand.OracleCommand(string, OracleConnection)' in 'MacallaUtil.GetMacallaLastPerformance()' could contain the following variables 'today'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetMacallaTodayPerformance()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MacallaUtil.cs" Line="150">Object 'con' can be disposed more than once in method 'MacallaUtil.GetMacallaTodayPerformance()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 150</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetMacallaTodayStateSummary(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MacallaUtil.cs" Line="195">Object 'con' can be disposed more than once in method 'MacallaUtil.GetMacallaTodayStateSummary(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 195</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MacallaUtil.cs" Line="166">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'MacallaUtil.GetMacallaTodayStateSummary(string)' could contain the following variables 'statecode', 'lastSpooled'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StageMacallaData()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MacallaUtil.cs" Line="364">Object 'con' can be disposed more than once in method 'MacallaUtil.StageMacallaData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 364</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="MasterPassUtil" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetMerchantOnboardingDetails(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MasterPassUtil.cs" Line="443">Object 'con' can be disposed more than once in method 'MasterPassUtil.GetMerchantOnboardingDetails(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 443</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MasterPassUtil.cs" Line="410">The query string passed to 'OracleCommand.OracleCommand(string, OracleConnection)' in 'MasterPassUtil.GetMerchantOnboardingDetails(string, string)' could contain the following variables 'merchantOnboardingDetail.AccountNo'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MasterPassUtil.cs" Line="381">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'MasterPassUtil.GetMerchantOnboardingDetails(string, string)' could contain the following variables 'new string[5][1]', 'new string[5][3]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetMerchantOnboardings()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MasterPassUtil.cs" Line="224">Object 'con' can be disposed more than once in method 'MasterPassUtil.GetMerchantOnboardings()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 224</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MasterPassUtil.cs" Line="195">The query string passed to 'OracleCommand.OracleCommand(string, OracleConnection)' in 'MasterPassUtil.GetMerchantOnboardings()' could contain the following variables 'merchantOnboarding.AccountNo'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetMerchantTodayPerformance()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MasterPassUtil.cs" Line="81">Object 'con' can be disposed more than once in method 'MasterPassUtil.GetMerchantTodayPerformance()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 81</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetSales()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MasterPassUtil.cs" Line="269">Object 'con' can be disposed more than once in method 'MasterPassUtil.GetSales()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 269</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetSalesDetails(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MasterPassUtil.cs" Line="356">Object 'con' can be disposed more than once in method 'MasterPassUtil.GetSalesDetails(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 356</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MasterPassUtil.cs" Line="324">The query string passed to 'OracleCommand.OracleCommand(string, OracleConnection)' in 'MasterPassUtil.GetSalesDetails(string, string)' could contain the following variables 'salesDetail.MerchantAccountno'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MasterPassUtil.cs" Line="293">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'MasterPassUtil.GetSalesDetails(string, string)' could contain the following variables 'new string[5][1]', 'new string[5][3]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetSalesLastFetchDateTime()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MasterPassUtil.cs" Line="157">Object 'con' can be disposed more than once in method 'MasterPassUtil.GetSalesLastFetchDateTime()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 157</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetSalesTodayPerformance()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MasterPassUtil.cs" Line="130">Object 'con' can be disposed more than once in method 'MasterPassUtil.GetSalesTodayPerformance()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 130</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StageMerchantOnboardingData()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MasterPassUtil.cs" Line="492">Object 'con' can be disposed more than once in method 'MasterPassUtil.StageMerchantOnboardingData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 492</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StageSalesData()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MasterPassUtil.cs" Line="535">Object 'con' can be disposed more than once in method 'MasterPassUtil.StageSalesData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 535</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="MobileRibUtil" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetLastFetchDateTime()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MobileRibUtil.cs" Line="95">Object 'con' can be disposed more than once in method 'MobileRibUtil.GetLastFetchDateTime()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 95</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetMobileRibDetails()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MobileRibUtil.cs" Line="137">Object 'con' can be disposed more than once in method 'MobileRibUtil.GetMobileRibDetails()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 137</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetMobileRibTodayStateSummary()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MobileRibUtil.cs" Line="67">Object 'con' can be disposed more than once in method 'MobileRibUtil.GetMobileRibTodayStateSummary()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 67</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StageMobileRibData()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="MobileRibUtil.cs" Line="183">Object 'con' can be disposed more than once in method 'MobileRibUtil.StageMobileRibData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 183</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="NapsOutgoingUtil" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetLastFetchDateTime()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NapsOutgoingUtil.cs" Line="150">Object 'con' can be disposed more than once in method 'NapsOutgoingUtil.GetLastFetchDateTime()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 150</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetNapsOutgoingDetails()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NapsOutgoingUtil.cs" Line="206">Object 'con' can be disposed more than once in method 'NapsOutgoingUtil.GetNapsOutgoingDetails()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 206</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetNapsOutgoingTodayPerformance()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NapsOutgoingUtil.cs" Line="65">Object 'con' can be disposed more than once in method 'NapsOutgoingUtil.GetNapsOutgoingTodayPerformance()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 65</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetNapsOutgoingTodayStateSummary()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NapsOutgoingUtil.cs" Line="122">Object 'con' can be disposed more than once in method 'NapsOutgoingUtil.GetNapsOutgoingTodayStateSummary()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 122</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StageNapsOutgoingData()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NapsOutgoingUtil.cs" Line="259">Object 'con' can be disposed more than once in method 'NapsOutgoingUtil.StageNapsOutgoingData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 259</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="NapsUtil" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetLastFetchDateTime()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NapsUtil.cs" Line="146">Object 'con' can be disposed more than once in method 'NapsUtil.GetLastFetchDateTime()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 146</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetNapsDetails()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NapsUtil.cs" Line="194">Object 'con' can be disposed more than once in method 'NapsUtil.GetNapsDetails()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 194</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetNapsTodayPerformance()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NapsUtil.cs" Line="62">Object 'con' can be disposed more than once in method 'NapsUtil.GetNapsTodayPerformance()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 62</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetNapsTodayStateSummary()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NapsUtil.cs" Line="118">Object 'con' can be disposed more than once in method 'NapsUtil.GetNapsTodayStateSummary()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 118</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StageNapsData()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NapsUtil.cs" Line="245">Object 'con' can be disposed more than once in method 'NapsUtil.StageNapsData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 245</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="NeftOutgoingUtil" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetLastFetchDateTime()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NeftOutgoingUtil.cs" Line="141">Object 'con' can be disposed more than once in method 'NeftOutgoingUtil.GetLastFetchDateTime()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 141</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetNeftOutgoingDetails()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NeftOutgoingUtil.cs" Line="189">Object 'con' can be disposed more than once in method 'NeftOutgoingUtil.GetNeftOutgoingDetails()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 189</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetNeftOutgoingTodayPerformance()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NeftOutgoingUtil.cs" Line="64">Object 'con' can be disposed more than once in method 'NeftOutgoingUtil.GetNeftOutgoingTodayPerformance()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 64</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetNeftOutgoingTodayStateSummary()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NeftOutgoingUtil.cs" Line="113">Object 'con' can be disposed more than once in method 'NeftOutgoingUtil.GetNeftOutgoingTodayStateSummary()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 113</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StageNeftOutgoingData()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NeftOutgoingUtil.cs" Line="232">Object 'con' can be disposed more than once in method 'NeftOutgoingUtil.StageNeftOutgoingData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 232</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="NipIncomingUtil" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetLastFetchDateTime()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NipIncomingUtil.cs" Line="140">Object 'con' can be disposed more than once in method 'NipIncomingUtil.GetLastFetchDateTime()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 140</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetNipIncomingDetails()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NipIncomingUtil.cs" Line="196">Object 'con' can be disposed more than once in method 'NipIncomingUtil.GetNipIncomingDetails()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 196</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetNipIncomingTodayPerformance()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NipIncomingUtil.cs" Line="67">Object 'con' can be disposed more than once in method 'NipIncomingUtil.GetNipIncomingTodayPerformance()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 67</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetNipIncomingTodayStateSummary()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NipIncomingUtil.cs" Line="113">Object 'con' can be disposed more than once in method 'NipIncomingUtil.GetNipIncomingTodayStateSummary()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 113</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StageNipIncomingData()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NipIncomingUtil.cs" Line="243">Object 'con' can be disposed more than once in method 'NipIncomingUtil.StageNipIncomingData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 243</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="NipOutgoingUtil" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetLastFetchDateTime()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NipOutgoingUtil.cs" Line="139">Object 'con' can be disposed more than once in method 'NipOutgoingUtil.GetLastFetchDateTime()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 139</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetNipOutgoingDetails()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NipOutgoingUtil.cs" Line="190">Object 'con' can be disposed more than once in method 'NipOutgoingUtil.GetNipOutgoingDetails()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 190</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetNipOutgoingTodayPerformance()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NipOutgoingUtil.cs" Line="65">Object 'con' can be disposed more than once in method 'NipOutgoingUtil.GetNipOutgoingTodayPerformance()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 65</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetNipOutgoingTodayStateSummary()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NipOutgoingUtil.cs" Line="111">Object 'con' can be disposed more than once in method 'NipOutgoingUtil.GetNipOutgoingTodayStateSummary()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 111</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StageNipOutgoingData()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="NipOutgoingUtil.cs" Line="233">Object 'con' can be disposed more than once in method 'NipOutgoingUtil.StageNipOutgoingData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 233</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="OnBoardingUtil" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetCardIssued()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="OnBoardingUtil.cs" Line="68">Object 'con' can be disposed more than once in method 'OnBoardingUtil.GetCardIssued()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 68</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetCardIssuedFor7Days()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="OnBoardingUtil.cs" Line="162">Object 'con' can be disposed more than once in method 'OnBoardingUtil.GetCardIssuedFor7Days()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 162</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetCasaSummary()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="OnBoardingUtil.cs" Line="386">Object 'con' can be disposed more than once in method 'OnBoardingUtil.GetCasaSummary()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 386</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetRibFor7Days()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="OnBoardingUtil.cs" Line="284">Object 'con' can be disposed more than once in method 'OnBoardingUtil.GetRibFor7Days()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 284</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetRibOnboarding()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="OnBoardingUtil.cs" Line="200">Object 'con' can be disposed more than once in method 'OnBoardingUtil.GetRibOnboarding()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 200</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StageCardIssuedData()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="OnBoardingUtil.cs" Line="111">Object 'con' can be disposed more than once in method 'OnBoardingUtil.StageCardIssuedData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 111</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StageCasaDeposits()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="OnBoardingUtil.cs" Line="431">Object 'con' can be disposed more than once in method 'OnBoardingUtil.StageCasaDeposits()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 431</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StageRibData()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="OnBoardingUtil.cs" Line="240">Object 'con' can be disposed more than once in method 'OnBoardingUtil.StageRibData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 240</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="PayDirectUtil" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetLastFetchDateTime()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="PayDirectUtil.cs" Line="149">Object 'con' can be disposed more than once in method 'PayDirectUtil.GetLastFetchDateTime()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 149</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetPayDirectDetails()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="PayDirectUtil.cs" Line="65">Object 'con' can be disposed more than once in method 'PayDirectUtil.GetPayDirectDetails()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 65</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetPayDirectTodayStateSummary()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="PayDirectUtil.cs" Line="121">Object 'con' can be disposed more than once in method 'PayDirectUtil.GetPayDirectTodayStateSummary()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 121</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StagePayDirectData()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="PayDirectUtil.cs" Line="191">Object 'con' can be disposed more than once in method 'PayDirectUtil.StagePayDirectData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 191</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ReportUtil" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#EbillsReport(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="ReportUtil.cs" Line="318">Object 'con' can be disposed more than once in method 'ReportUtil.EbillsReport(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 318</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="ReportUtil.cs" Line="291">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'ReportUtil.EbillsReport(string, string)' could contain the following variables 'new string[5][1]', 'new string[5][3]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#FepReport(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="ReportUtil.cs" Line="560">Object 'con' can be disposed more than once in method 'ReportUtil.FepReport(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 560</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="ReportUtil.cs" Line="532">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'ReportUtil.FepReport(string, string)' could contain the following variables 'new string[5][1]', 'new string[5][3]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MacallaReport(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="ReportUtil.cs" Line="203">Object 'con' can be disposed more than once in method 'ReportUtil.MacallaReport(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 203</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="ReportUtil.cs" Line="176">The query string passed to 'OracleCommand.OracleCommand(string, OracleConnection)' in 'ReportUtil.MacallaReport(string, string)' could contain the following variables 'new string[5][1]', 'new string[5][3]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#NapsReport(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="ReportUtil.cs" Line="371">Object 'con' can be disposed more than once in method 'ReportUtil.NapsReport(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 371</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="ReportUtil.cs" Line="344">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'ReportUtil.NapsReport(string, string)' could contain the following variables 'new string[5][1]', 'new string[5][3]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#NeftOutgoingReport(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="ReportUtil.cs" Line="429">Object 'con' can be disposed more than once in method 'ReportUtil.NeftOutgoingReport(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 429</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="ReportUtil.cs" Line="402">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'ReportUtil.NeftOutgoingReport(string, string)' could contain the following variables 'new string[5][1]', 'new string[5][3]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#NipIncomingReport(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="ReportUtil.cs" Line="491">Object 'con' can be disposed more than once in method 'ReportUtil.NipIncomingReport(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 491</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="ReportUtil.cs" Line="464">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'ReportUtil.NipIncomingReport(string, string)' could contain the following variables 'new string[9][1]', 'new string[9][3]', 'new string[9][5]', 'new string[9][7]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#NipOutgoingReport(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="ReportUtil.cs" Line="263">Object 'con' can be disposed more than once in method 'ReportUtil.NipOutgoingReport(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 263</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="ReportUtil.cs" Line="236">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'ReportUtil.NipOutgoingReport(string, string)' could contain the following variables 'new string[9][1]', 'new string[9][3]', 'new string[9][5]', 'new string[9][7]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#RibReport(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="ReportUtil.cs" Line="150">Object 'con' can be disposed more than once in method 'ReportUtil.RibReport(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 150</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="ReportUtil.cs" Line="123">The query string passed to 'OracleCommand.OracleCommand(string, OracleConnection)' in 'ReportUtil.RibReport(string, string)' could contain the following variables 'new string[5][1]', 'new string[5][3]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="RibUtil" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetLastFetchDateTime()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="RibUtil.cs" Line="142">Object 'con' can be disposed more than once in method 'RibUtil.GetLastFetchDateTime()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 142</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetRibDetails()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="RibUtil.cs" Line="190">Object 'con' can be disposed more than once in method 'RibUtil.GetRibDetails()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 190</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetRibTodayPerformance()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="RibUtil.cs" Line="65">Object 'con' can be disposed more than once in method 'RibUtil.GetRibTodayPerformance()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 65</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetRibTodayStateSummary()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="RibUtil.cs" Line="114">Object 'con' can be disposed more than once in method 'RibUtil.GetRibTodayStateSummary()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 114</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StageRibData()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="RibUtil.cs" Line="234">Object 'con' can be disposed more than once in method 'RibUtil.StageRibData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 234</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="SummaryUtil" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetLastTwoFetchDateTime(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="1894">Object 'con' can be disposed more than once in method 'SummaryUtil.GetLastTwoFetchDateTime(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1894</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="1877">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'SummaryUtil.GetLastTwoFetchDateTime(string)' could contain the following variables 'tableName'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodayEbillsSuccessCummTrend(System.DateTime)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="699">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodayEbillsSuccessCummTrend(DateTime)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 699</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodayEbillsSuccessVolTrend(System.DateTime)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="1055">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodayEbillsSuccessVolTrend(DateTime)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1055</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodayFailureTrending()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="1292">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodayFailureTrending()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1292</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodayFepSuccessCummTrend(System.DateTime,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="833">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodayFepSuccessCummTrend(DateTime, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 833</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="807">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'SummaryUtil.GetTodayFepSuccessCummTrend(DateTime, string)' could contain the following variables 'channelType', 'deDate'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodayFepSuccessVolTrend(System.DateTime,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="1189">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodayFepSuccessVolTrend(DateTime, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1189</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="1163">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'SummaryUtil.GetTodayFepSuccessVolTrend(DateTime, string)' could contain the following variables 'channelType', 'deDate'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodayFlexBranchSuccessCummTrend(System.DateTime)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="613">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodayFlexBranchSuccessCummTrend(DateTime)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 613</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodayMacallaInterAccDCSuccessCummTrend(System.DateTime)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="531">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodayMacallaInterAccDCSuccessCummTrend(DateTime)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 531</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodayMacallaSuccessCummTrend(System.DateTime)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="487">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodayMacallaSuccessCummTrend(DateTime)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 487</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodayMacallaSuccessVolTrend(System.DateTime)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="924">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodayMacallaSuccessVolTrend(DateTime)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 924</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodayNapsSuccessCummTrend(System.DateTime)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="655">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodayNapsSuccessCummTrend(DateTime)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 655</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodayNapsSuccessVolTrend(System.DateTime)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="1011">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodayNapsSuccessVolTrend(DateTime)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1011</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodayNeftSuccessCummTrend(System.DateTime)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="878">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodayNeftSuccessCummTrend(DateTime)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 878</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodayNeftSuccessVolTrend(System.DateTime)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="1235">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodayNeftSuccessVolTrend(DateTime)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1235</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodayNipIncomingSuccessCummTrend(System.DateTime)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="790">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodayNipIncomingSuccessCummTrend(DateTime)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 790</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodayNipIncomingSuccessVolTrend(System.DateTime)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="1147">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodayNipIncomingSuccessVolTrend(DateTime)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1147</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodayNipOutgoingSuccessCummTrend(System.DateTime)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="743">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodayNipOutgoingSuccessCummTrend(DateTime)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 743</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodayNipOutgoingSuccessVolTrend(System.DateTime)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="1100">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodayNipOutgoingSuccessVolTrend(DateTime)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1100</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodayPerformanceSummary()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="225">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodayPerformanceSummary()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 225</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodayRibSuccessCummTrend(System.DateTime)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="575">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodayRibSuccessCummTrend(DateTime)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 575</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodayRibSuccessVolTrend(System.DateTime)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="969">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodayRibSuccessVolTrend(DateTime)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 969</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodaySuccessCummTrend()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="443">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodaySuccessCummTrend()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 443</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodaySuccessTrending()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="391">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodaySuccessTrending()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 391</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTodayVolumeSummary()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="334">Object 'con' can be disposed more than once in method 'SummaryUtil.GetTodayVolumeSummary()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 334</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#IsAtmOk()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="1616">Object 'con' can be disposed more than once in method 'SummaryUtil.IsAtmOk()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1616</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#IsMacallaInterAccDcOk()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="1824">Object 'con' can be disposed more than once in method 'SummaryUtil.IsMacallaInterAccDcOk()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1824</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#IsNameEnquiryOk()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="1865">Object 'con' can be disposed more than once in method 'SummaryUtil.IsNameEnquiryOk()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1865</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#IsNipIncomingOk()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="1474">Object 'con' can be disposed more than once in method 'SummaryUtil.IsNipIncomingOk()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1474</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#IsNipOutgoingOk()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="1546">Object 'con' can be disposed more than once in method 'SummaryUtil.IsNipOutgoingOk()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1546</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#IsPosOk()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="1686">Object 'con' can be disposed more than once in method 'SummaryUtil.IsPosOk()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1686</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#IsRibOk()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="1403">Object 'con' can be disposed more than once in method 'SummaryUtil.IsRibOk()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1403</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#IsWebOk()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SummaryUtil.cs" Line="1756">Object 'con' can be disposed more than once in method 'SummaryUtil.IsWebOk()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1756</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="SwiftMT101Util" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetLastFetchDateTime()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SwiftMT101Util.cs" Line="166">Object 'con' can be disposed more than once in method 'SwiftMT101Util.GetLastFetchDateTime()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 166</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetSwiftMt101Details()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SwiftMT101Util.cs" Line="83">Object 'con' can be disposed more than once in method 'SwiftMT101Util.GetSwiftMt101Details()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 83</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetSwiftMt101TodayStateSummary()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SwiftMT101Util.cs" Line="138">Object 'con' can be disposed more than once in method 'SwiftMT101Util.GetSwiftMt101TodayStateSummary()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 138</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StageSwiftMt101Data()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2017-07-13 17:40:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="x:\Projects\Dashboard\Dashboard\Utils" File="SwiftMT101Util.cs" Line="209">Object 'con' can be disposed more than once in method 'SwiftMT101Util.StageSwiftMt101Data()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 209</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202">
+   <Name>Do not dispose objects multiple times</Name>
+   <Description>A correctly implemented Dispose method can be called multiple times without throwing an exception. However, this is not guaranteed and to avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.</Description>
+   <Resolution Name="Default">Object {0} can be disposed more than once in method {1}. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 166</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182334.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100">
+   <Name>Review SQL queries for security vulnerabilities</Name>
+   <Description>A SQL command string built from user input is vulnerable to SQL injection attacks. Microsoft SQL Server and other database servers support stored procedures and parameterized SQL queries, which reduce the risk of injection attacks.</Description>
+   <Resolution Name="WithNonLiterals">The query string passed to {0} in {1} could contain the following variables {2}. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182310.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="12.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

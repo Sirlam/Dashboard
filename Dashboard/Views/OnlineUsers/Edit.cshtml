@@ -1,0 +1,78 @@
+﻿@model Dashboard.Models.onlineuser
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>onlineuser</legend>
+
+        @Html.HiddenFor(model => model.id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.username)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.username)
+            @Html.ValidationMessageFor(model => model.username)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.created_by)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.created_by)
+            @Html.ValidationMessageFor(model => model.created_by)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.creation_date)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.creation_date)
+            @Html.ValidationMessageFor(model => model.creation_date)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.verified_by)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.verified_by, new {@Value = User.Identity.Name, @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.verified_by)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.verification_date)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.verification_date, new { @Value = DateTime.Now, @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.verification_date)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.udisabled)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.udisabled)
+            @Html.ValidationMessageFor(model => model.udisabled)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

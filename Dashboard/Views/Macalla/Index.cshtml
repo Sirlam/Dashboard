@@ -1,0 +1,364 @@
+﻿@using Dashboard.Utils
+@{
+    ViewBag.Title = "Macalla";
+
+    List<MacallaStateSummary> macallaQuickTopupSummaries = ViewBag.MacallaQuickTopup;
+    List<MacallaStateSummary> macallaTopupSummaries = ViewBag.MacallaTopup;
+    List<MacallaStateSummary> macallaInterAccountTransferSummaries = ViewBag.MacallaInterAccountTransfer;
+    List<MacallaStateSummary> macallaDepositMoneySummaries = ViewBag.MacallaDepositMoney;
+    List<MacallaStateSummary> macallaInterAccountDebitCreditSummaries = ViewBag.MacallaInterAccountDebitCredit;
+    List<MacallaStateSummary> macallaMerchantPaymentTransferSummaries = ViewBag.MacallaMerchantPaymentTransfer;
+    List<MacallaStateSummary> macallaUtilityBillPaymentSummaries = ViewBag.MacallaUtilityBillPayment;
+    List<MacallaStateSummary> macallaWithdrawMoneySummaries = ViewBag.MacallaWithdrawMoney;
+    List<MacallaStateSummary> macallaTransferMoneySummaries = ViewBag.MacallaTransferMoney;
+    List<MacallaStateSummary> macallaTransferSummaries = ViewBag.MacallaTransfer;
+    List<MacallaStateSummary> macallaQuickBalanceSummaries = ViewBag.MacallaQuickBalance;
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2></h2>
+            </hgroup>
+        </div>
+    </section>
+}
+<div class="container">
+    <div class="row">
+        <h4>
+            @{ var today = DateTime.Now.ToString("dd-MMM-yyyy");}
+            Date: @Html.DisplayFor(modelItem => today)
+        </h4>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div>
+                <h3 class="text-primary">QuickTopup</h3>
+                <table class="table table-striped table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Transaction State</th>
+                            <th>Total Transaction</th>
+                            <th>Total Volume</th>
+                            <th>State Indicator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var summary in macallaQuickTopupSummaries)
+                        {
+                            <tr>
+                                <td class="col-sm-3"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TotalTransaction)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TotalVolume)</b></td>
+                                <td class="col-sm-3 text-success"><b>@Html.DisplayFor(modelItem => summary.TransactionStateInd)</b></td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div>
+                <h3 class="text-primary">Topup</h3>
+                <table class="table table-striped table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Transaction State</th>
+                            <th>Total Transaction</th>
+                            <th>Total Volume</th>
+                            <th>State Indicator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var summary in macallaTopupSummaries)
+                        {
+                            <tr>
+                                <td class="col-sm-3"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TotalTransaction)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TotalVolume)</b></td>
+                                <td class="col-sm-3 text-success"><b>@Html.DisplayFor(modelItem => summary.TransactionStateInd)</b></td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div>
+                <h3 class="text-primary">InterAccountTransfer</h3>
+                <table class="table table-striped table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Transaction State</th>
+                            <th>Total Transaction</th>
+                            <th>Total Volume</th>
+                            <th>State Indicator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var summary in macallaInterAccountTransferSummaries)
+                        {
+                            <tr>
+                                <td class="col-sm-3"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TotalTransaction)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TotalVolume)</b></td>
+                                <td class="col-sm-3 text-success"><b>@Html.DisplayFor(modelItem => summary.TransactionStateInd)</b></td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div>
+                <h3 class="text-primary">DepositMoney</h3>
+                <table class="table table-striped table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Transaction State</th>
+                            <th>Total Transaction</th>
+                            <th>Total Volume</th>
+                            <th>State Indicator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var summary in macallaDepositMoneySummaries)
+                        {
+                            <tr>
+                                <td class="col-sm-3"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TotalTransaction)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TotalVolume)</b></td>
+                                <td class="col-sm-3 text-success"><b>@Html.DisplayFor(modelItem => summary.TransactionStateInd)</b></td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div>
+                <h3 class="text-primary">InterAccountDebitCredit</h3>
+                <table class="table table-striped table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Transaction State</th>
+                            <th>Total Transaction</th>
+                            <th>Total Volume</th>
+                            <th>State Indicator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var summary in macallaInterAccountDebitCreditSummaries)
+                        {
+                            <tr>
+                                <td class="col-sm-3"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TotalTransaction)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TotalVolume)</b></td>
+                                <td class="col-sm-3 text-success"><b>@Html.DisplayFor(modelItem => summary.TransactionStateInd)</b></td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div>
+                <h3 class="text-primary">MasterPass</h3>
+                <table class="table table-striped table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Transaction State</th>
+                            <th>Total Transaction</th>
+                            <th>Total Volume</th>
+                            <th>State Indicator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var summary in macallaMerchantPaymentTransferSummaries)
+                        {
+                            <tr>
+                                <td class="col-sm-3"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TotalTransaction)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TotalVolume)</b></td>
+                                <td class="col-sm-3 text-success"><b>@Html.DisplayFor(modelItem => summary.TransactionStateInd)</b></td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div>
+                <h3 class="text-primary">UtilityBillPayment</h3>
+                <table class="table table-striped table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Transaction State</th>
+                            <th>Total Transaction</th>
+                            <th>Total Volume</th>
+                            <th>State Indicator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var summary in macallaUtilityBillPaymentSummaries)
+                        {
+                            <tr>
+                                <td class="col-sm-3"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TotalTransaction)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TotalVolume)</b></td>
+                                <td class="col-sm-3 text-success"><b>@Html.DisplayFor(modelItem => summary.TransactionStateInd)</b></td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div>
+                <h3 class="text-primary">WithdrawMoney</h3>
+                <table class="table table-striped table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Transaction State</th>
+                            <th>Total Transaction</th>
+                            <th>Total Volume</th>
+                            <th>State Indicator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var summary in macallaWithdrawMoneySummaries)
+                        {
+                            <tr>
+                                <td class="col-sm-3"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TotalTransaction)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TotalVolume)</b></td>
+                                <td class="col-sm-3 text-success"><b>@Html.DisplayFor(modelItem => summary.TransactionStateInd)</b></td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div>
+                <h3 class="text-primary">TransferMoney</h3>
+                <table class="table table-striped table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Transaction State</th>
+                            <th>Total Transaction</th>
+                            <th>Total Volume</th>
+                            <th>State Indicator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var summary in macallaTransferMoneySummaries)
+                        {
+                            <tr>
+                                <td class="col-sm-3"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TotalTransaction)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TotalVolume)</b></td>
+                                <td class="col-sm-3 text-success"><b>@Html.DisplayFor(modelItem => summary.TransactionStateInd)</b></td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+        
+        <div class="col-sm-6">
+            <div>
+                <h3 class="text-primary">Transfer</h3>
+                <table class="table table-striped table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Transaction State</th>
+                            <th>Total Transaction</th>
+                            <th>Total Volume</th>
+                            <th>State Indicator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var summary in macallaTransferSummaries)
+                        {
+                            <tr>
+                                <td class="col-sm-3"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TotalTransaction)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TotalVolume)</b></td>
+                                <td class="col-sm-3 text-success"><b>@Html.DisplayFor(modelItem => summary.TransactionStateInd)</b></td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-6">
+            <div>
+                <h3 class="text-primary">QuickBalance</h3>
+                <table class="table table-striped table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Transaction State</th>
+                            <th>Total Transaction</th>
+                            <th>Total Volume</th>
+                            <th>State Indicator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var summary in macallaQuickBalanceSummaries)
+                        {
+                            <tr>
+                                <td class="col-sm-3"><b>@Html.DisplayFor(modelItem => summary.TransactionState)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TotalTransaction)</b></td>
+                                <td class="col-sm-3 text-warning text-right"><b>@Html.DisplayFor(modelItem => summary.TotalVolume)</b></td>
+                                <td class="col-sm-3 text-success"><b>@Html.DisplayFor(modelItem => summary.TransactionStateInd)</b></td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+@section scripts
+{
+    <script>
+        function refresh() {
+            setTimeout(function () {
+                location.reload();
+            }, 120000);
+        }
+        refresh();
+    </script>
+}

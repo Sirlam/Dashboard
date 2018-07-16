@@ -1,0 +1,137 @@
+﻿@using Dashboard.Utils
+@{
+    ViewBag.Title = "OnBoarding";
+    List<MerchantSummary> cardSummaries = ViewBag.CardSummary;
+    List<MerchantSummary> ribSummaries = ViewBag.RibSummary;
+    List<CasaSummary> casaSummaries = ViewBag.CasaSummary;
+    List<MerchantSummary> merchantCount = ViewBag.MerchantCountSummary;
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2></h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<div class="container">
+    <h4>Card Issued</h4>
+    <table class="table table-bordered table-striped table-responsive">
+        <tr>
+            <th>Date</th>
+            <th>Card issued Count</th>
+            <th>Consumer Banking(CS)</th>
+            <th>Commercial Banking(CM)</th>
+            <th>Others</th>
+        </tr>
+        <tbody>
+            @foreach (var card in cardSummaries)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => card.DateApproved)</td>
+                    <td>@Html.DisplayFor(modelItem => card.MerchantCount)</td>
+                    <td>@Html.DisplayFor(modelItem => card.Cs)</td>
+                    <td>@Html.DisplayFor(modelItem => card.Cm)</td>
+                    <td>@Html.DisplayFor(modelItem => card.Unknown)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <canvas id="card_onboarding" width="800" height="300"></canvas>
+    <h4>Rib Registered</h4>
+    <table class="table table-bordered table-striped table-responsive">
+        <tr>
+            <th>Date</th>
+            <th>RIB Registered Count</th>
+        </tr>
+        <tbody>
+            @foreach (var card in ribSummaries)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => card.DateApproved)</td>
+                    <td>@Html.DisplayFor(modelItem => card.MerchantCount)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <canvas id="rib_onboarding" width="800" height="300"></canvas>
+    
+    <h4>CASA</h4>
+    <table class="table table-bordered table-striped table-responsive">
+        <tr>
+            <th>Date</th>
+            <th>Total Count</th>
+            <th>Total Volume</th>
+            <th>Savings Count</th>
+            <th>Current Count</th>
+            <th>Others Count</th>
+            <th>Savings Volume</th>
+            <th>Current Volume</th>
+            <th>Others Volume</th>
+        </tr>
+        <tbody>
+            @foreach (var casa in casaSummaries)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => casa.TransactionDate)</td>
+                    <td>@Html.DisplayFor(modelItem => casa.Count)</td>
+                    <td>@Html.DisplayFor(modelItem => casa.Volume)</td>
+                    <td>@Html.DisplayFor(modelItem => casa.SavingsCount)</td>
+                    <td>@Html.DisplayFor(modelItem => casa.CurrentCount)</td>
+                    <td>@Html.DisplayFor(modelItem => casa.OthersCount)</td>
+                    <td>@Html.DisplayFor(modelItem => casa.SavingsVolume)</td>
+                    <td>@Html.DisplayFor(modelItem => casa.CurrentVolume)</td>
+                    <td>@Html.DisplayFor(modelItem => casa.OthersVolume)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <canvas id="casa_deposits" width="800" height="300"></canvas>
+    
+    <h4>Merchant Onboarding</h4>
+    <table class="table table-bordered table-striped table-responsive">
+        <tr>
+            <th>Date</th>
+            <th>Merchant Count</th>
+            <th>Consumer Banking(CS)</th>
+            <th>Commercial Banking(CM)</th>
+            <th>Consumer Banking(DB)</th>
+            <th>Others</th>
+        </tr>
+        <tbody>
+            @foreach (var merchant in merchantCount)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => merchant.DateApproved)</td>
+                    <td>@Html.DisplayFor(modelItem => merchant.MerchantCount)</td>
+                    <td>@Html.DisplayFor(modelItem => merchant.Cs)</td>
+                    <td>@Html.DisplayFor(modelItem => merchant.Cm)</td>
+                    <td>@Html.DisplayFor(modelItem => merchant.Db)</td>
+                    <td>@Html.DisplayFor(modelItem => merchant.Unknown)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <canvas id="merchant_onboarding2" width="800" height="300"></canvas>
+</div>
+
+    @section scripts
+    {
+        <script src="~/Scripts/onboarding-chart.js" language="javascript" type="text/javascript"></script>
+        <script src="~/Scripts/merchant.js" language="javascript" type="text/javascript"></script>
+
+        <script>
+    function refresh() {
+        setTimeout(function () {
+            location.reload();
+        }, 120000);
+    }
+    refresh();
+        </script>
+
+    }
+

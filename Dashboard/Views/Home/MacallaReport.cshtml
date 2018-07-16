@@ -1,0 +1,100 @@
+﻿@using Dashboard.Utils
+@using Microsoft.Ajax.Utilities
+@{
+    ViewBag.Title = "Macalla Report";
+    List<MacallaReport> macallaReports = ViewBag.MacallaReport;
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2></h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            @using(Html.BeginForm()){
+            <div class="form-group">
+                Report Date: <input type="text" name="TranDate" id="TranDate" />
+                <button type="submit" class="btn btn-info">Generate</button>
+                <span class="help-block">Format: [dd-mmm-yyyy] e.g 09-Sep-2017</span>
+            </div>
+            }
+
+        </div>
+
+    </div>
+    
+    @if (macallaReports != null)
+    {
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="fg-scrollabletable">
+                    <table class="table table-hover table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Transaction Type</th>
+                                <th>Total Transaction</th>
+                                <th>Success</th>
+                                <th>Invalid Accounts/Transactions</th>
+                                <th>Error Processing</th>
+                                <th>Insufficient Balance</th>
+                                <th>NIBSS Error</th>
+                                <th>System Failure</th>
+                                <th>User Failure</th>
+                                <th>Total Failure</th>
+                                <th>Success (%)</th>
+                            </tr>
+                        </thead>
+                    
+                        <tbody>
+                            @foreach (var macallaReport in macallaReports)
+                            {
+                                <tr>
+                                    <td><b>@Html.DisplayFor(modelItem => macallaReport.TransactionType)</b></td>
+                                    <td><b>@Html.DisplayFor(modelItem => macallaReport.TotalTransactions)</b></td>
+                                    <td class="text-success"><b>@Html.DisplayFor(modelItem => macallaReport.SuccessCount)</b></td>
+                                    @{
+                                        var invalidCustomers = macallaReport.FulfilmentFailure + macallaReport.TopUpExceeded + macallaReport.UnableToVend + macallaReport.InvalidAccount;
+                                    }
+                                    <td class="text-primary"><b>@Html.DisplayFor(modelItem => invalidCustomers)</b></td>
+                                    @{
+                                        var errorProcessing = macallaReport.CompassError + macallaReport.ErrorProcessing + macallaReport.NullResponse;
+                                    }
+                                    <td class="text-danger"><b>@Html.DisplayFor(modelItem => errorProcessing)</b></td>
+                                    <td class="text-primary"><b>@Html.DisplayFor(modelItem => macallaReport.InsufficientBalance)</b></td>
+                                    <td class="text-primary"><b>@Html.DisplayFor(modelItem => macallaReport.NibssError)</b></td>
+                                    @{
+                                        var systemFailure = macallaReport.CompassError + macallaReport.ErrorProcessing + macallaReport.NullResponse;
+                                        var totalTransactions = macallaReport.SuccessCount + systemFailure;
+                                        var userFailure = invalidCustomers + macallaReport.InsufficientBalance + macallaReport.NibssError;
+                                        var totalFailed = userFailure + systemFailure;
+                                    }
+                                    <td class="text-danger"><b>@Html.DisplayFor(modelItem => systemFailure)</b></td>
+                                    <td class="text-primary"><b>@Html.DisplayFor(modelItem => userFailure)</b></td>
+                                    <td class="text-primary"><b>@Html.DisplayFor(modelItem => totalFailed)</b></td>
+                                    @{
+                                        var percent = "0.00";
+                                        if ((macallaReport.SuccessCount + systemFailure) > 0)
+                                        {
+                                            percent = ((macallaReport.SuccessCount/(float) (totalTransactions))
+                                                       *100).ToString("0.00");
+                                        }
+                                    }
+                                    <td class="text-success"><b>@Html.DisplayFor(modelItem => percent)</b></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DashboardModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="onlineusers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="creation_date" Type="datetime" Nullable="false" />
+    <Property Name="verified_by" Type="varchar" MaxLength="25" />
+    <Property Name="verification_date" Type="datetime" />
+    <Property Name="udisabled" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DashboardModelStoreContainer">
+    <EntitySet Name="onlineusers" EntityType="Self.onlineusers" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

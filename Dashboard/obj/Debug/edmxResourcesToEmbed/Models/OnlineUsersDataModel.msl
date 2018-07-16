@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DashboardModelStoreContainer" CdmEntityContainer="OnlineUsersContext">
+    <EntitySetMapping Name="onlineusers">
+      <EntityTypeMapping TypeName="DashboardModel.onlineuser">
+        <MappingFragment StoreEntitySet="onlineusers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="creation_date" ColumnName="creation_date" />
+          <ScalarProperty Name="verified_by" ColumnName="verified_by" />
+          <ScalarProperty Name="verification_date" ColumnName="verification_date" />
+          <ScalarProperty Name="udisabled" ColumnName="udisabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

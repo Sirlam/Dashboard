@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Failure Analysis";
+}
+<div class="container">
+    <div class="row">
+        @using (Html.BeginForm("Index","Analysis",FormMethod.Get))
+        {
+            <div class="form-group">
+                <label for="SelectedApplication" class="col-sm-2">Application:</label>
+                <div class="col-sm-4">
+                    <select class="form-control" id="SelectedApplication" name="SelectedApplication">
+                        <option value="RIB">RIB</option>
+                        <option value="ATM">ATM</option>
+                        <option value="POS">POS</option>
+                        <option value="WEB">WEB</option>
+                        <option value="MOBILE_USSD">Mobile USSD</option>
+                        <option value="MOBILE_WEB">Mobile WEB</option>
+                        @*<option value="fundTransferAccountToMobile">MOBILE - fundTransferAccountToMobile</option>
+                        <option value="fundTransferMobileToAccount">MOBILE - fundTransferMobileToAccount</option>
+                        <option value="fundTransferAccountToAccount">MOBILE - fundTransferAccountToAccount</option>
+                        <option value="QuickBalance">MOBILE - QuickBalance</option>
+                        <option value="QuickRecharge">MOBILE - QuickRecharge</option>*@
+                    </select>
+                    <input type="text" class="hidden" id="SelectedApplication1" name="SelectedApplication1" value="@ViewBag.SelectedApplication" />
+                    </div>
+            </div>
+            <div class="form-group">
+                <label for="Days" class="col-sm-2">Range:</label>
+                <div class="col-sm-4">
+                    <select class="form-control" id="Days" name="Days">
+                        <option value="Weekly">Weekly</option>
+                        <option value="Monthly">Monthly</option>
+                    </select>
+                    <input type="text" class="hidden" id="Days1" name="Days1" value="@ViewBag.Days" />
+                </div>
+            </div>
+            <p>
+                <button type="submit" id="detail_submit" class="btn btn-info">Generate</button>
+            </p>
+        }
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <canvas id="rib_canvas_analysis" width="800" height="300"></canvas>
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <canvas id="fep_canvas_analysis" width="800" height="300"></canvas>
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <canvas id="mobile_canvas_analysis" width="800" height="300"></canvas>
+            <hr />
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script src="~/Scripts/transaction-analysis-chart.js" language="javascript" type="text/javascript"></script>
+}
+

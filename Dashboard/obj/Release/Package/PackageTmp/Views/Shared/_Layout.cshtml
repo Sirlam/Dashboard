@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Ecobank @ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar top-nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <ul class="nav nav-tabs">
+                        <li><a href="@Url.Action("Index", "Home")">Count</a></li>
+                        <li><a href="@Url.Action("Detail", "Home")">Trend [Count]</a></li>
+                        <li><a href="@Url.Action("Index","Volume")">Volumes</a></li>
+                        <li><a href="@Url.Action("Detail","Volume")">Trend [Volumes]</a></li>
+                        <li><a href="@Url.Action("Index","Collections")">Collections</a></li>
+                        <li><a href="@Url.Action("Index","MasterPass")">MasterPass</a></li>
+                        <li><a href="@Url.Action("MacallaReport", "Home")">Macalla Report</a></li>
+                        <li><a href="@Url.Action("Reports","Home")">Reports</a></li>
+                        <li><a href="@Url.Action("Index","Analysis")">Failure Analysis</a></li>
+                        @*<li><a href="@Url.Action("Index","OnBoarding")">Onboardings</a></li>
+                        <li><a href="@Url.Action("Index","Atm")">Atm Performance</a></li>*@
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-info btn-sm pull-right">
+                        @User.Identity.Name
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <header class="top-header">
+        <div class="container">
+            <div>
+                <p class="site-title pull-left">
+                    <a href="@Url.Action("Index", "Home")"><img src="@Url.Content("~/Images/Logo.jpg")" alt="Ecobank" /></a>
+                </p>
+                <h4 class="pull-right">
+                    @ViewBag.Title
+                </h4>
+            </div>
+
+        </div>
+    </header>
+    <div id="body">
+        <!--@RenderSection("featured", required: false)-->
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9">
+                    <p>Copyright &copy; @DateTime.Now.Year. Ecobank Nigeria. All rights reserved</p>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#">Terms of Service</a>|<a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--CDN Not working, no internet access
+        <script src="https://cdnjs.cloudfare.com/ajax/libs/Chart.js/2.2.1/Chart.bundle.js"></script>
+        <script src="https://cdnjs.cloudfare.com/ajax/libs/Chart.js/2.2.1/Chart.js"></script>
+        -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/bootstrapJS")
+    @Scripts.Render("~/bundles/datepickerJS")
+    @Scripts.Render("~/bundles/chartJS")
+    @Scripts.Render("~/bundles/requireJS")
+    @Scripts.Render("~/bundles/datepickerENJS")
+    @Scripts.Render("~/bundles/table2excelJS")
+    
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.datepicker-here').datepicker({
+                maxDate: new Date(),
+                dateFormat: "dd-M-yyyy",
+            });
+
+            
+            $('#export').click(function() {
+                $('#reportTable').table2excel({
+                    exclude: ".noExl",
+                    name: "Worksheet Name",
+                    fileext: ".xls",
+                    filename: "Report File"
+                });
+            });
+
+            $('#export2').click(function () {
+                $('#salesDetails').table2excel({
+                    exclude: ".noExl",
+                    name: "Worksheet Name",
+                    fileext: ".xls",
+                    filename: "Sales Details"
+                });
+            });
+
+            $('#export3').click(function () {
+                $('#merchantOnboarding').table2excel({
+                    exclude: ".noExl",
+                    name: "Worksheet Name",
+                    fileext: ".xls",
+                    filename: "Merchant Onboarding"
+                });
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>

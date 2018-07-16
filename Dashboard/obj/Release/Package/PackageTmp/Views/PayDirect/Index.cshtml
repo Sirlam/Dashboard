@@ -1,0 +1,65 @@
+﻿@using Dashboard.Utils
+@{
+    ViewBag.Title = "PayDirect";
+    List<PayDirectStateSummary> payDirectSummaries = ViewBag.PayDirectSummary;
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2></h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <h3>All Transactions</h3>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="fg-scrollabletable">
+                <table class="table table-hover table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>State Code</th>
+                            <th>Description</th>
+                            <th>Total Transaction</th>
+                            <th>Status</th>
+                            <th>Volume</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var summary in payDirectSummaries)
+                        {
+                            <tr>
+                                <td class="col-sm-3 text-right"><b>@Html.DisplayFor(modelItem => summary.StateCode)</b></td>
+                                <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => summary.TransactionStateDesc)</b></td>
+                                <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => summary.TotalTransaction)</b></td>
+                                <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => summary.TransactionStateInd)</b></td>
+                                <td class="col-sm-2 text-right text-warning"><b>@Html.DisplayFor(modelItem => summary.TotalTransactionVolume)</b></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        function refresh() {
+            setTimeout(function () {
+                location.reload();
+            }, 120000);
+        }
+        refresh();
+    </script>
+}

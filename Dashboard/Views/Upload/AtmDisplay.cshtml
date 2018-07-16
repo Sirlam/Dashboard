@@ -1,0 +1,53 @@
+﻿@model IEnumerable<string[]>
+@{
+    ViewBag.Title = "AtmDisplay";
+}
+
+<h2>UploadDisplay</h2>
+
+
+@using (Html.BeginForm("SaveReport", "Upload", FormMethod.Post))
+{
+    var yesterday = DateTime.Now.AddDays(-1).ToString("dd-MMM-yyyy");
+
+    @:Report Date:<input type="text" class="form-control" name="reportDate" value="@yesterday">
+    <table class="table table-condensed table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Terminal Id</th>
+            <th>Location</th>
+            <th>In Service</th>
+            <th>Out of Service</th>
+            <th>Hard Faults</th>
+            <th>Supply Out</th>
+            <th>Cash Out</th>
+            <th>Comms</th>
+            <th>Closed Mode</th>
+            <th>Replenishment</th>
+            <th>Atm Class</th>
+            <th>Branch Code</th>
+        </tr>
+        @{ var sn = 1;}
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@sn</td>
+                @{ sn++;}
+                @for (int i = 0; i < 12; i++)
+                {
+                    <td>
+                        @{ var name = "data" + i;}
+                       @* @if (item[i] != null && item[i].Length > 0)
+                        {*@
+                            <input type="text" name="@name" value="@item[i]" class="form-control" readonly />
+                        @*}*@
+                    </td>
+                    @*                                        <td> @Html.DisplayFor(modelItem => item[i])</td>*@
+                }
+            </tr>
+        }
+        <tr><td colspan="3"><input type="submit" value="Upload" class="btn btn-primary" /></td></tr>
+    </table>
+
+}

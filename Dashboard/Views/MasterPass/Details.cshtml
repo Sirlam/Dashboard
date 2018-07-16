@@ -1,0 +1,183 @@
+﻿@using Dashboard.Utils
+@{
+    ViewBag.Title = "MasterPass Transaction Details";
+    List<SalesDetails> reports = ViewBag.Report;
+    List<MerchantOnboardingDetails> reports2 = ViewBag.Report2;
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2></h2>
+            </hgroup>
+        </div>
+    </section>
+}
+<div class="container">
+    <div class="row">
+        <h4>
+            @{ var today = DateTime.Now.ToString("dd-MMM-yyyy");}
+            Date: @Html.DisplayFor(modelItem => today)
+        </h4>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>Reports</h4>
+            <hr />
+        </div>
+        @using (Html.BeginForm())
+        {
+            <div class="form-group">
+                <label for="SelectedApplication" class="col-sm-2">Application:</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="SelectedApplication" name="SelectedApplication">
+                        <option>Merchant Onboarding</option>
+                        <option>Transaction Details</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="StartDate" class="col-sm-2">Start Date:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control datepicker-here" data-position="bottom left" data-language="en" name="StartDate" id="StartDate">
+                </div>
+
+                <label for="EndDate" class="col-sm-2">End Date:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control datepicker-here" data-position="bottom left" data-language="en" id="EndDate" name="EndDate">
+                </div>
+            </div>
+            <p>
+                <button type="submit" value="View" class="btn btn-info">View</button>
+            </p>
+
+        }
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div>
+                <h3 class="text-primary">Merchant Onboarding</h3>
+                <div class="bg-scrollabletable">
+                    <table class="table table-striped table-condensed table-bordered" id="merchantOnboarding">
+                        <thead>
+                            <tr>
+                                <th>Merchant Id</th>
+                                <th>Terminal Id</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Location</th>
+                                <th>Date Initiated</th>
+                                <th>Date Approved</th>
+                                <th>Account No</th>
+                                <th>Branch Id</th>
+                                <th>Phone No</th>
+                                <th>Account Type</th>
+                                <th>Account Class</th>
+                                <th>Business Segment</th>
+                                <th>Business Segment Details</th>
+                                <th>RM Code</th>
+                                <th>RM Name</th>
+                                <th>Coporate Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (reports2 != null)
+                            {
+                                foreach (var report2 in reports2)
+                                {
+                                    <tr>
+                                        <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report2.NewMarchantId)</b></td>
+                                        <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report2.TerminalId)</b></td>
+                                        <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report2.FirstName)</b></td>
+                                        <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report2.LastName)</b></td>
+                                        <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report2.StreetAddress)</b></td>
+                                        <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report2.DateInitiated)</b></td>
+                                        <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report2.DateApproved)</b></td>
+                                        <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report2.AccountNo)</b></td>
+                                        <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report2.BranchCode)</b></td>
+                                        <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report2.PhoneNo)</b></td>
+                                        <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report2.AccountType)</b></td>
+                                        <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report2.AccountClass)</b></td>
+                                        <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report2.BusinessSegment)</b></td>
+                                        <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report2.SegmentDesc)</b></td>
+                                        <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report2.RmCode)</b></td>
+                                        <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report2.RmName)</b></td>
+                                        <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report2.CoporateName)</b></td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                    <button type="button" id="export3" class="btn btn-danger">Export as Excel</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-12">
+                <div>
+                    <h3 class="text-primary">Transaction Details</h3>
+                    <div class="bg-scrollabletable">
+                        <table class="table table-striped table-condensed table-bordered" id="salesDetails">
+                            <thead>
+                                <tr>
+                                    <th>Transaction Date</th>
+                                    <th>Merchant Name</th>
+                                    <th>Merchant Id</th>
+                                    <th>Terminal Id</th>
+                                    <th>Branch Name</th>
+                                    <th>Merchant Phone</th>
+                                    <th>Merchant Account No</th>
+                                    <th>Account Class</th>
+                                    <th>Business Segment</th>
+                                    <th>Business Segment Details</th>
+                                    <th>RM Code</th>
+                                    <th>RM Name</th>
+                                    <th>Masterpass Transaction Reference</th>
+                                    <th>CBA Transaction Reference</th>
+                                    <th>Transaction Amount</th>
+                                    <th>Transaction Status</th>
+                                    <th>Name of Issuer Payer</th>
+                                    <th>Merchant Location</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (reports != null)
+                                {
+                                    foreach (var report in reports)
+                                    {
+                                        <tr>
+                                            <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report.Transactiondate)</b></td>
+                                            <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report.Merchantname)</b></td>
+                                            <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report.Merchantid)</b></td>
+                                            <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report.Terminalid)</b></td>
+                                            <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report.BranchName)</b></td>
+                                            <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report.Merchantphone)</b></td>
+                                            <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report.MerchantAccountno)</b></td>
+                                            <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report.Accountclass)</b></td>
+                                            <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report.BusinessSegment)</b></td>
+                                            <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report.SegmentDesc)</b></td>
+                                            <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report.RmCode)</b></td>
+                                            <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report.RmName)</b></td>
+                                            <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report.MasterpassTranRef)</b></td>
+                                            <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report.CbaTrnRefNo)</b></td>
+                                            <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report.Transactionamount)</b></td>
+                                            <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report.Transactionstatus)</b></td>
+                                            <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report.Transactionstatus)</b></td>
+                                            <td class="col-sm-2"><b>@Html.DisplayFor(modelItem => report.Merchantlocation)</b></td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                            
+                        </table>
+                        <button type="button" id="export2" class="btn btn-danger">Export as Excel</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+</div>
